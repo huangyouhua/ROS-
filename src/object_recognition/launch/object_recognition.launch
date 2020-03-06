@@ -1,0 +1,17 @@
+<launch>
+
+  <!--launch the usb camera and astra_pro depth camera-->
+  <!--<include file="$(find astra_launch)/launch/astrapro.launch">
+  </include>-->
+
+  <include file="$(find usb_cam)/launch/usb_cam-test.launch">
+  </include>
+
+  <!--<node name="recognition" pkg="object_recognition" type="recognition" output="screen"/>-->
+  <!--node name="image_listener" pkg="ros_opencv" type="image_listener" output="screen"/-->
+  <node name="table_tennis" pkg="object_recognition" type="table_tennis" output="screen"/>
+  <node name="image_process" pkg="object_recognition" type="image_process" output="screen"/>
+
+
+
+</launch>

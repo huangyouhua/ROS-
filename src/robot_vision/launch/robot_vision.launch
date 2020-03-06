@@ -1,0 +1,5 @@
+<launch>
+  <!--<node name="cv" pkg="robot_vision" type="cv" output="screen"/>-->
+  <node name="capture" pkg="robot_vision" type="capture" output="screen"/>
+  <!--node name="HSV" pkg="robot_vision" type="HSV" output="screen"/-->
+  </launch>
