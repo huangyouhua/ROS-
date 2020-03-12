@@ -10,7 +10,7 @@ void PosCallback(const geometry_msgs::PointStamped::ConstPtr &msg)
 {
     /*根据识别到的小球位置发布速度信息 */
     vel_msg.angular.z = 0.01 * (msg->point.x - 320);
-    vel_msg.linear.x = 0.2;
+    vel_msg.linear.x = 0.1;
 }
 
 int main(int argc, char **argv)

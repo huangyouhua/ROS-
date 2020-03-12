@@ -18,7 +18,7 @@
 using namespace cv;
 using namespace std;
 
-pair<Point, Mat> ImageProcessed;
+pair<Point3f, Mat> ImageProcessed;
 sensor_msgs::ImagePtr RosImageProcessed;
 geometry_msgs::PointStamped BallPos;
 ros::Time ImageStamped;
@@ -126,7 +126,7 @@ Mat myfindContours(Mat image)
     return imageContours;  
 }  
 
-pair<Point, Mat> Table_Tennis_Pos(Mat img)
+pair<Point3f, Mat> Table_Tennis_Pos(Mat img)
 {
     Mat canny_output;
 	Mat imgHSV;
@@ -162,17 +162,18 @@ pair<Point, Mat> Table_Tennis_Pos(Mat img)
         }
     }
 
-	Point center(img_compress_width/2, img_compress_height/2);
+	static Point3f Position(img_compress_width/2, img_compress_height/2, minRadius);//z is the radius of circle
+
 	if(circles.size() != 0)
 	{
-		//Point center(cvRound(circles[MaxCircleIndex][0]), cvRound(circles[MaxCircleIndex][1]));
-		center.x = cvRound(circles[MaxCircleIndex][0]);
-		center.y = cvRound(circles[MaxCircleIndex][1]);
-		int radius = cvRound(circles[MaxCircleIndex][2]);
-		circle(img, center, radius, Scalar(255, 255, 255), 2, 8, 0);// Hough Circles
-
+		Point center(cvRound(circles[MaxCircleIndex][0]), cvRound(circles[MaxCircleIndex][1]));
+		Position.x = cvRound(circles[MaxCircleIndex][0]);
+		Position.y = cvRound(circles[MaxCircleIndex][1]);
+		Position.z = cvRound(circles[MaxCircleIndex][2]);
+		//int radius = cvRound(circles[MaxCircleIndex][2]);
+		circle(img, center, Position.z, Scalar(255, 255, 255), 2, 8, 0);// Hough Circles
 	}
-	return {center, img};
+	return {Position, img};
 }
 
 
@@ -191,7 +192,7 @@ void imageCallback(const sensor_msgs::Image::ConstPtr& msg)
 	
 	BallPos.point.x = ImageProcessed.first.x;
 	BallPos.point.y = ImageProcessed.first.y;
-	BallPos.point.z = 0;
+	BallPos.point.z = 100 - ImageProcessed.first.z;
 	BallPos.header.stamp = ImageStamped;
 	BallPos.header.frame_id = "Ball_Frame";
 }

@@ -34,6 +34,6 @@ using namespace std;
 vector<Mat> GetOriginalImg(const string img_path);
 void showManyImages(vector<Mat>& src, Size imgSize);
 Mat myfindContours(Mat image);
-pair<Point, Mat> Table_Tennis_Pos(Mat img);
+pair<Point3f, Mat> Table_Tennis_Pos(Mat img);
 
 #endif 

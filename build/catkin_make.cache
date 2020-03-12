@@ -1,2 +1,2 @@
-object_recognition:robot_vision
+mbot_description_gazebo:mbot_navigation_gazebo:object_recognition:robot_vision:table_tennis_scene_gazebo
 -DCATKIN_DEVEL_PREFIX=/home/hyh/mc_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hyh/mc_ws/install -G Unix Makefiles
