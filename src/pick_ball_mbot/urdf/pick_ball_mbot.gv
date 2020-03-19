@@ -1,0 +1,35 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"collector" [label="collector"];
+"front_wheel" [label="front_wheel"];
+"left_cover" [label="left_cover"];
+"left_support_rod" [label="left_support_rod"];
+"middle_transport" [label="middle_transport"];
+"paddle" [label="paddle"];
+"rear_collector" [label="rear_collector"];
+"right_cover" [label="right_cover"];
+"right_support_rod" [label="right_support_rod"];
+"right_wheel" [label="right_wheel"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "collector_joint" [label="xyz: -0.0073431 -0.4104 -0.061965 \nrpy: -1.5708 -0 -1.5708"]
+"collector_joint" -> "collector"
+"base_link" -> "front_wheel_joint" [label="xyz: 0 -0.1424 -0.040965 \nrpy: 1.5708 1.3794 1.5708"]
+"front_wheel_joint" -> "front_wheel"
+"base_link" -> "left_cover_joint" [label="xyz: -0.00070327 -0.2264 -0.072965 \nrpy: 0 -0 0"]
+"left_cover_joint" -> "left_cover"
+"base_link" -> "left_support_rod_joint" [label="xyz: 0.024614 -0.15428 -0.057965 \nrpy: 1.5708 -4.23516e-22 -3.14159"]
+"left_support_rod_joint" -> "left_support_rod"
+"base_link" -> "middle_transport_joint" [label="xyz: -0.010843 -0.15415 0.037201 \nrpy: 1.5708 -0 0"]
+"middle_transport_joint" -> "middle_transport"
+"base_link" -> "paddle_joint" [label="xyz: 0 -0.0023183 0.047035 \nrpy: -2.3269 -0 -3.14159"]
+"paddle_joint" -> "paddle"
+"base_link" -> "rear_collector_joint" [label="xyz: -0.0073431 -0.3164 -0.0089653 \nrpy: 1.5708 -4.23516e-22 -3.14159"]
+"rear_collector_joint" -> "rear_collector"
+"base_link" -> "right_cover_joint" [label="xyz: -0.065843 -0.0023183 0.047035 \nrpy: 0 -1.5708 3.1416"]
+"right_cover_joint" -> "right_cover"
+"base_link" -> "right_support_rod_joint" [label="xyz: -0.0392756 -0.154283 -0.0579653 \nrpy: 1.5708 -0 0"]
+"right_support_rod_joint" -> "right_support_rod"
+"base_link" -> "right_wheel_joint" [label="xyz: 0 -0.28437 -0.041059 \nrpy: 1.5708 -0 1.5708"]
+"right_wheel_joint" -> "right_wheel"
+}

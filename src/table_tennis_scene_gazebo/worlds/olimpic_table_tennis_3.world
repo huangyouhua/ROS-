@@ -81,20 +81,8 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <model name='olimpic_table_tennis'>
-     <pose frame=''>10 10 0 0 -0 0</pose>
       <link name='link_0'>
         <pose frame=''>0 0 0 0 -0 0</pose>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>16.6667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>16.6667</iyy>
-            <iyz>0</iyz>
-            <izz>16.6667</izz>
-          </inertia>
-        </inertial>
         <visual name='visual'>
           <geometry>
             <mesh>
@@ -103,9 +91,8 @@
             </mesh>
           </geometry>
         </visual>
+
         <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
@@ -113,65 +100,17 @@
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
         </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
       </link>
       <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-     
+      <pose frame=''>-3.34549 -1.31628 0 0 -0 0</pose>
     </model>
+
     <state world_name='default'>
-      <sim_time>43 945000000</sim_time>
-      <real_time>44 373420459</real_time>
-      <wall_time>1583944873 547481264</wall_time>
-      <iterations>43945</iterations>
+      <sim_time>11 495000000</sim_time>
+      <real_time>11 552452370</real_time>
+      <wall_time>1584101773 63290051</wall_time>
+      <iterations>11495</iterations>
       <model name='ground_plane'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -183,13 +122,13 @@
         </link>
       </model>
       <model name='olimpic_table_tennis'>
-        <pose frame=''>10 10 10 0 0 0</pose>
-        <scale>0.1 0.1 0.1</scale>
+        <pose frame=''>-3.34549 -1.31628 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
         <link name='link_0'>
-          <pose frame=''>0 0 0 0 0 0</pose>
+          <pose frame=''>-3.34549 -1.31628 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.000725 -0.001166 8.32143 -1.66777 -1.53088 -3.13287</acceleration>
-          <wrench>-0.000725 -0.001166 8.32143 0 -0 0</wrench>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -198,7 +137,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-2.41156 -20.2225 8.54999 0 0.347643 1.24819</pose>
+        <pose frame=''>-0.012482 -27.7685 7.44511 -0 0.163643 1.51619</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>

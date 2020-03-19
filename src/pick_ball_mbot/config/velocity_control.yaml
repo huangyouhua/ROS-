@@ -1,0 +1,8 @@
+pick_ball_mbot:
+  paddle_joint_controller:
+    type: "velocity_controllers/JointTrajectoryController"
+    joints:
+      - paddle_joint
+    /gazebo_ros_control/pid_gains:
+      paddle_joint:  {p: 50.0, d: 1.0, i: 0.01, i_clamp: 1.0}
+
