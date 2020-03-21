@@ -1,0 +1,22 @@
+pick_ball_mbot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController 
+    publish_rate: 50  
+  
+  # Position Controllers ---------------------------------------
+  paddle_joint_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: paddle_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  front_wheel_joint_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: front_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  rear_wheel_joint_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: right_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+

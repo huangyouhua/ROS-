@@ -6,6 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
+        - /TF1/Frames1
+        - /TF1/Tree1/base_link1
+        - /TF1/Tree1/base_link1/paddle1
       Splitter Ratio: 0.5
     Tree Height: 712
   - Class: rviz/Selection
@@ -70,7 +74,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        front_wheel:
+        front_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_right_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -85,17 +94,17 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        middle_transport:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         paddle:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rear_collector:
+        rear_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_right_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -110,22 +119,76 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        right_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_footprint:
+          Value: false
+        base_link:
+          Value: true
+        collector:
+          Value: false
+        front_left_wheel:
+          Value: true
+        front_right_wheel:
+          Value: true
+        left_cover:
+          Value: false
+        left_support_rod:
+          Value: false
+        paddle:
+          Value: false
+        rear_left_wheel:
+          Value: false
+        rear_right_wheel:
+          Value: false
+        right_cover:
+          Value: false
+        right_support_rod:
+          Value: false
+      Marker Scale: 0.800000012
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        base_link:
+          base_footprint:
+            {}
+          collector:
+            {}
+          front_left_wheel:
+            {}
+          front_right_wheel:
+            {}
+          left_support_rod:
+            {}
+          paddle:
+            left_cover:
+              {}
+            right_cover:
+              {}
+          rear_left_wheel:
+            {}
+          rear_right_wheel:
+            {}
+          right_support_rod:
+            {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -146,25 +209,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.22046554
+      Distance: 1.29336989
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.0869994387
+        Y: -0.0683557093
+        Z: 0.00315060536
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.965398312
+      Pitch: 0.0297960415
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.23858833
+      Yaw: 1.67040944
     Saved: ~
 Window Geometry:
   Displays:

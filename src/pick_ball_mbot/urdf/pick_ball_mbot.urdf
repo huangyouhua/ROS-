@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.0073430681844793 -0.0240899963415031 0.216409188578357"
+        xyz="0.012976 -0.013657 0.17563"
         rpy="0 0 0" />
       <mass
-        value="1.05139109376071" />
+        value="1.0824" />
       <inertia
-        ixx="0.00348499733987661"
-        ixy="5.59664608948403E-21"
-        ixz="-8.26305565804843E-20"
-        iyy="0.00365982960162949"
-        iyz="-0.000149638202350733"
-        izz="0.00152216475016813" />
+        ixx="0.0036507"
+        ixy="8.5713E-20"
+        ixz="-2.2831E-19"
+        iyy="0.0038702"
+        iyz="-0.00014855"
+        izz="0.0015847" />
     </inertial>
     <visual>
       <origin
@@ -31,7 +31,7 @@
       <material
         name="">
         <color
-          rgba="0.686274509803922 0 0 1" />
+          rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
     <collision>
@@ -45,20 +45,285 @@
     </collision>
   </link>
   <link
+    name="front_right_wheel">
+    <inertial>
+      <origin
+        xyz="3.21062620933787E-12 -1.27994836951473E-13 0.014176412344854"
+        rpy="0 0 0" />
+      <mass
+        value="0.0937829390237727" />
+      <inertia
+        ixx="3.09771819038864E-05"
+        ixy="1.13085557310682E-09"
+        ixz="6.33875303444406E-15"
+        iyy="3.10054948109752E-05"
+        iyz="-2.52783953359037E-16"
+        izz="4.77838078287252E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/front_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.066074 -0.10152 -0.030048"
+      rpy="1.5708 1.5309 -1.5744" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="7.36868899231524E-13 -3.12904910315659E-12 0.0148235876550204"
+        rpy="0 0 0" />
+      <mass
+        value="0.0937829390237727" />
+      <inertia
+        ixx="3.10038750554585E-05"
+        ixy="6.67197191832215E-09"
+        ixz="-1.50548030860998E-15"
+        iyy="3.09788016590389E-05"
+        iyz="6.16076592224176E-15"
+        izz="4.77838078287253E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.12101 -0.10059 -0.030048"
+      rpy="1.5708 0.24454 -1.546" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_left_wheel">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 3.21316931395366E-12 -0.0141764123448539"
+        rpy="0 0 0" />
+      <mass
+        value="0.0937829390237727" />
+      <inertia
+        ixx="3.10055399070393E-05"
+        ixy="3.90518914781106E-24"
+        ixz="5.92948462490062E-20"
+        iyy="3.09771368078223E-05"
+        iyz="-6.344397796191E-15"
+        izz="4.77838078287253E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/rear_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/rear_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.092074 -0.24356 -0.030048"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_left_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_right_wheel">
+    <inertial>
+      <origin
+        xyz="3.13210568592126E-12 7.17287340634698E-13 0.0148235876551461"
+        rpy="0 0 0" />
+      <mass
+        value="0.0937829390237727" />
+      <inertia
+        ixx="3.09785521091164E-05"
+        ixy="-6.18028035977606E-09"
+        ixz="-6.18403139274761E-15"
+        iyy="3.10041246057451E-05"
+        iyz="-1.41616086299302E-15"
+        izz="4.77838078287253E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/rear_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/rear_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.095123 -0.24365 -0.030048"
+      rpy="-1.5708 1.3457 -1.5685" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_right_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="collector">
+    <inertial>
+      <origin
+        xyz="0.00290907494232911 -0.040890215457459 0.173468819063094"
+        rpy="0 0 0" />
+      <mass
+        value="0.373810739586063" />
+      <inertia
+        ixx="0.00346608745603927"
+        ixy="9.69850646937143E-06"
+        ixz="-2.84961455748493E-05"
+        iyy="0.00429300102178934"
+        iyz="0.000599276181565496"
+        izz="0.00198702343757656" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/collector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pick_ball_mbot/meshes/collector.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="collector_joint"
+    type="fixed">
+    <origin
+      xyz="0.0094753 -0.11331 0.048119"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="collector" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
     name="left_cover">
     <inertial>
       <origin
-        xyz="0.0339621470957772 0.172876722995914 0.102900925287299"
+        xyz="0.0339621470957824 0.172876722995866 0.102900925287308"
         rpy="0 0 0" />
       <mass
-        value="0.348968668389308" />
+        value="0.348968668389245" />
       <inertia
-        ixx="0.00220864018472111"
-        ixy="-9.94750925639056E-05"
-        ixz="-0.000119883170893649"
-        iyy="0.00198390619787086"
-        iyz="-0.000357322467893291"
-        izz="0.000935622380947324" />
+        ixx="0.00220864016851107"
+        ixy="-9.94750925634307E-05"
+        ixz="-0.000119883170893584"
+        iyy="0.00198390619746038"
+        iyz="-0.00035732246789374"
+        izz="0.000935622364147671" />
     </inertial>
     <visual>
       <origin
@@ -88,10 +353,10 @@
     name="left_cover_joint"
     type="fixed">
     <origin
-      xyz="-0.00070327 -0.2264 -0.072965"
-      rpy="0 0 0" />
+      xyz="0.01014 -0.11017 0.072246"
+      rpy="-1.5708 0 0" />
     <parent
-      link="base_link" />
+      link="collector" />
     <child
       link="left_cover" />
     <axis
@@ -101,16 +366,16 @@
     name="right_cover">
     <inertial>
       <origin
-        xyz="-0.00573994781975207 -0.0426051719539319 0.00250436597775372"
+        xyz="-0.00573994781975205 -0.0426051719539319 0.00250436597775372"
         rpy="0 0 0" />
       <mass
         value="0.109962415450793" />
       <inertia
         ixx="0.00015179667895952"
         ixy="-5.32196527116854E-05"
-        ixz="-3.8888262975556E-09"
+        ixz="-3.8888262975532E-09"
         iyy="0.000384457111161325"
-        iyz="4.02644466212917E-08"
+        iyz="4.02644466212908E-08"
         izz="0.000535795937644261" />
     </inertial>
     <visual>
@@ -141,171 +406,12 @@
     name="right_cover_joint"
     type="fixed">
     <origin
-      xyz="-0.065843 -0.0023183 0.047035"
-      rpy="3.1416 -1.5708 0" />
+      xyz="-0.055 0.0098333 -0.15183"
+      rpy="-1.5708 0 1.5708" />
     <parent
-      link="base_link" />
+      link="collector" />
     <child
       link="right_cover" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="rear_collector">
-    <inertial>
-      <origin
-        xyz="-0.000326437311550335 -0.00719503141930298 0.0162130574516879"
-        rpy="0 0 0" />
-      <mass
-        value="0.0869561531734891" />
-      <inertia
-        ixx="8.91551923460167E-05"
-        ixy="9.59115568056101E-07"
-        ixz="8.3030805905887E-07"
-        iyy="0.000171888387652561"
-        iyz="-3.6277346981146E-05"
-        izz="0.000196700391316864" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/rear_collector.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/rear_collector.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="rear_collector_joint"
-    type="fixed">
-    <origin
-      xyz="-0.0073431 -0.3164 -0.0089653"
-      rpy="1.5708 0 3.1416" />
-    <parent
-      link="base_link" />
-    <child
-      link="rear_collector" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="middle_transport">
-    <inertial>
-      <origin
-        xyz="0.000317501851703324 -0.00221740273164433 0.0657117561421356"
-        rpy="0 0 0" />
-      <mass
-        value="0.0942491276999206" />
-      <inertia
-        ixx="0.000413364094335781"
-        ixy="5.42603682492851E-08"
-        ixz="1.96250347724689E-06"
-        iyy="0.000558336345208193"
-        iyz="7.0563176338099E-05"
-        izz="0.000226004346785157" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/middle_transport.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/middle_transport.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="middle_transport_joint"
-    type="fixed">
-    <origin
-      xyz="-0.010843 -0.15415 0.037201"
-      rpy="1.5708 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="middle_transport" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="collector">
-    <inertial>
-      <origin
-        xyz="-0.0176597255220184 -0.0449868031021791 0.000267587009012863"
-        rpy="0 0 0" />
-      <mass
-        value="0.192616334199706" />
-      <inertia
-        ixx="0.00137500118894815"
-        ixy="3.73221086735074E-05"
-        ixz="3.60601238693752E-06"
-        iyy="0.00158544226406398"
-        iyz="2.1181795998119E-06"
-        izz="0.000798620814045366" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/collector.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/collector.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="collector_joint"
-    type="fixed">
-    <origin
-      xyz="-0.0073431 -0.4104 -0.061965"
-      rpy="-1.5708 0 -1.5708" />
-    <parent
-      link="base_link" />
-    <child
-      link="collector" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -313,17 +419,17 @@
     name="right_support_rod">
     <inertial>
       <origin
-        xyz="-0.00137647829361359 0.0385500804376881 0"
+        xyz="-0.0013764782936087 0.038550080437723 0"
         rpy="0 0 0" />
       <mass
-        value="0.00511240249563707" />
+        value="0.00511240249562874" />
       <inertia
-        ixx="4.56403013951615E-06"
-        ixy="-2.51362154296087E-07"
-        ixz="2.12244832904835E-21"
-        iyy="1.11745762780574E-07"
-        iyz="8.80235687902266E-23"
-        izz="4.55443005833591E-06" />
+        ixx="4.56403013951185E-06"
+        ixy="-2.5136215429555E-07"
+        ixz="-1.05770456001034E-18"
+        iyy="1.1174576332198E-07"
+        iyz="-2.28998634241562E-22"
+        izz="4.55443005887314E-06" />
     </inertial>
     <visual>
       <origin
@@ -336,7 +442,7 @@
       <material
         name="">
         <color
-          rgba="1 1 1 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -353,8 +459,8 @@
     name="right_support_rod_joint"
     type="fixed">
     <origin
-      xyz="-0.0392756380929201 -0.154282545794808 -0.0579653445088367"
-      rpy="1.5707963267949 0 0" />
+      xyz="-0.018957 -0.11344 -0.047048"
+      rpy="1.5708 0 0" />
     <parent
       link="base_link" />
     <child
@@ -366,17 +472,17 @@
     name="left_support_rod">
     <inertial>
       <origin
-        xyz="-0.00137647829365084 0.0385500804376881 0"
+        xyz="-0.0013764782936211 0.0385500804377229 1.38777878078145E-17"
         rpy="0 0 0" />
       <mass
-        value="0.00511240249563706" />
+        value="0.00511240249562874" />
       <inertia
-        ixx="4.56403013951614E-06"
-        ixy="-2.51362154299168E-07"
-        ixz="-1.10897694624677E-18"
-        iyy="1.11745762781719E-07"
-        iyz="1.85660035477067E-21"
-        izz="4.55443005833705E-06" />
+        ixx="4.56403013951185E-06"
+        ixy="-2.51362154297282E-07"
+        ixz="-1.10898032490382E-18"
+        iyy="1.11745728122124E-07"
+        iyz="1.86614419528822E-21"
+        izz="4.55443002367328E-06" />
     </inertial>
     <visual>
       <origin
@@ -389,7 +495,7 @@
       <material
         name="">
         <color
-          rgba="1 1 1 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -406,7 +512,7 @@
     name="left_support_rod_joint"
     type="fixed">
     <origin
-      xyz="0.024614 -0.15428 -0.057965"
+      xyz="0.044933 -0.11344 -0.047048"
       rpy="1.5708 0 3.1416" />
     <parent
       link="base_link" />
@@ -416,126 +522,20 @@
       xyz="0 0 0" />
   </joint>
   <link
-    name="front_wheel">
-    <inertial>
-      <origin
-        xyz="-6.93889390390723E-18 0 -0.00734306818449355"
-        rpy="0 0 0" />
-      <mass
-        value="0.196638567373492" />
-      <inertia
-        ixx="0.00122441738983552"
-        ixy="-1.35525271560688E-20"
-        ixz="-2.73918548789853E-20"
-        iyy="0.00122441738983552"
-        iyz="1.53119568483981E-19"
-        izz="9.56574247977301E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/front_wheel.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/front_wheel.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="front_wheel_joint"
-    type="continuous">
-    <origin
-      xyz="0 -0.1424 -0.040965"
-      rpy="1.5708 1.3794 1.5708" />
-    <parent
-      link="base_link" />
-    <child
-      link="front_wheel" />
-    <axis
-      xyz="0 0 1" />
-  </joint>
-  <link
-    name="right_wheel">
-    <inertial>
-      <origin
-        xyz="-1.11022302462516E-16 -1.40859546249317E-15 -0.00734306818449256"
-        rpy="0 0 0" />
-      <mass
-        value="0.196638567373492" />
-      <inertia
-        ixx="0.00122441738983552"
-        ixy="-2.57298168502123E-37"
-        ixz="-4.18959262788251E-18"
-        iyy="0.00122441738983552"
-        iyz="-2.9387358770557E-36"
-        izz="9.56574247977301E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/right_wheel.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://pick_ball_mbot/meshes/right_wheel.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="right_wheel_joint"
-    type="continuous">
-    <origin
-      xyz="0 -0.28437 -0.041059"
-      rpy="1.5708 0 1.5708" />
-    <parent
-      link="base_link" />
-    <child
-      link="right_wheel" />
-    <axis
-      xyz="0 0 1" />
-  </joint>
-  <link
     name="paddle">
     <inertial>
       <origin
-        xyz="0.010437 1.1604E-13 -6.4149E-13"
+        xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.16555" />
+        value="0" />
       <inertia
-        ixx="0.00063183"
-        ixy="-1.3459E-16"
-        ixz="-4.7094E-15"
-        iyy="0.00050637"
-        iyz="2.4414E-13"
-        izz="0.00050637" />
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
     </inertial>
     <visual>
       <origin
@@ -565,8 +565,8 @@
     name="paddle_joint"
     type="continuous">
     <origin
-      xyz="0 -0.0023183 0.047035"
-      rpy="-2.3269 0 3.1416" />
+      xyz="0 0.038521 0.057952"
+      rpy="2.6432 0 -3.1416" />
     <parent
       link="base_link" />
     <child

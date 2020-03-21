@@ -98,7 +98,7 @@
         </link>
 
         <gazebo reference="${prefix}_wheel_link">
-            <material>Gazebo/Gray</material>
+            <material>Gazebo/Black</material>
         </gazebo>
 
         <!-- Transmission is important to link the joints and the controller -->
@@ -195,12 +195,12 @@
         <caster prefix="back"  reflect="1"/>
 
         <!-- controller -->
-        <gazebo>
+        <!--<gazebo>
             <plugin name="differential_drive_controller" 
                     filename="libgazebo_ros_diff_drive.so">
                 <rosDebugLevel>Debug</rosDebugLevel>
                 <publishWheelTF>true</publishWheelTF>
-                <robotNamespace>/</robotNamespace>
+                <robotNamespace>/mbot</robotNamespace>
                 <publishTf>1</publishTf>
                 <publishWheelJointState>true</publishWheelJointState>
                 <alwaysOn>true</alwaysOn>
@@ -218,7 +218,14 @@
                 <odometryTopic>odom</odometryTopic> 
                 <robotBaseFrame>base_footprint</robotBaseFrame>
             </plugin>
-        </gazebo> 
+        </gazebo> -->
+        <gazebo>
+            <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+                <robotNamespace>/mbot</robotNamespace>
+                <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+                <legacyModeNS>true</legacyModeNS>
+             </plugin>
+        </gazebo>
     </xacro:macro>
 
 </robot>
