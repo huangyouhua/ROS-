@@ -206,30 +206,10 @@ link_directories(
 # catkin_add_nosetests(test)
 
 ########target_link_librariesz中必须添加${OpenCV_LIBS}######
-add_executable(recognition src/recognition.cpp)
-add_dependencies(recognition ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(recognition ${catkin_LIBRARIES} ${OpenCV_LIBS})
-
-
-# add_library(image_process
-#   src/image_process.cpp include/image_process.h
-# )
-# add_dependencies(image_process ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-# target_link_libraries(image_process
-#   ${catkin_LIBRARIES}
-# )
 add_executable(image_process
   src/image_process.cpp include/image_process.h
 )
 add_dependencies(image_process ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(image_process
-  ${catkin_LIBRARIES} ${OpenCV_LIBS}
-)
-
-add_executable(table_tennis
-  src/table_tennis.cpp
-)
-add_dependencies(table_tennis ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(table_tennis 
   ${catkin_LIBRARIES} ${OpenCV_LIBS}
 )

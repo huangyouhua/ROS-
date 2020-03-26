@@ -332,6 +332,12 @@ image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
 //Path to a library.
 lib:FILEPATH=/opt/ros/kinetic/lib/librospack.so
 
+//Value Computed by CMake
+mbot_control_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/mbot_control
+
+//Value Computed by CMake
+mbot_control_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/mbot_control
+
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/kinetic/share/message_filters/cmake
 
@@ -343,6 +349,12 @@ object_recognition_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/object_recognition
 
 //Value Computed by CMake
 object_recognition_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/object_recognition
+
+//Value Computed by CMake
+pick_ball_mbot_control_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot_control
+
+//Value Computed by CMake
+pick_ball_mbot_control_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/pick_ball_mbot_control
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake

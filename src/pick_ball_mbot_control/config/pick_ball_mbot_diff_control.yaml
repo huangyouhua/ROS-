@@ -16,7 +16,7 @@ pick_ball_mbot:
 
     wheel_separation : 0.12
     wheel_radius : 0.032
-    base_frame_id: base_link
+    base_frame_id: base_footprint
 
     linear:
       x:

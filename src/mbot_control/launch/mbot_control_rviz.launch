@@ -1,0 +1,5 @@
+<launch>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mbot_control)/config/mbot_control.rviz" />
+
+</launch>

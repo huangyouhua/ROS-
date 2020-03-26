@@ -19,7 +19,11 @@ using namespace cv;
 using namespace std;
 
 pair<Point3f, Mat> ImageProcessed;
+Mat ImageThresholded;//二值化后的图像数组
+sensor_msgs::ImagePtr RosImgThresholded;
 sensor_msgs::ImagePtr RosImageProcessed;
+
+
 geometry_msgs::PointStamped BallPos;
 ros::Time ImageStamped;
 
@@ -130,50 +134,42 @@ pair<Point3f, Mat> Table_Tennis_Pos(Mat img)
 {
     Mat canny_output;
 	Mat imgHSV;
-	Mat imgThresholded;//二值化后的图像数组
+	Mat ImageProcessed;//处理后的图像，画出小球的轮廓
 	Mat bf;//对灰度图像进行双边滤波
 	Mat element = getStructuringElement(MORPH_RECT, Size(5, 5));
     vector<Mat> hsvSplit;
+	ImageProcessed = img;
     cvtColor(img, imgHSV, COLOR_BGR2HSV); 
     split(imgHSV, hsvSplit);
     equalizeHist(hsvSplit[2], hsvSplit[2]);
-    inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), imgThresholded); //Threshold the image
+    inRange(imgHSV, Scalar(iLowH, iLowS, iLowV), Scalar(iHighH, iHighS, iHighV), ImageThresholded); //Threshold the image
 
 
-    blur(imgThresholded, bf, Size(3, 3));//mean value fiter
+    blur(ImageThresholded, bf, Size(3, 3));//mean value fiter
 
     Canny(bf, canny_output, g_nThresh, g_nThresh * 2, 3);// canny_output is a binary img
 
     //myfindContours(canny_output);
 
-    vector<Vec3f> circles;
-    int dp = 1; int minDist = 70; int param1 = 250; int param2 = 15; int minRadius = 1; int maxRadius = 100;
-
+    vector<Vec3f> circles; //
+    // int dp = 1; int minDist = 70; int param1 = 250; int param2 = 15; int minRadius = 1; int maxRadius = 100;
+	int dp = 1; int minDist = 8; int param1 = 250; int param2 = 20; int minRadius = 2; int maxRadius = 40;
     HoughCircles(canny_output, circles, CV_HOUGH_GRADIENT, dp, minDist, param1, param2, minRadius, maxRadius);
 
-    int MaxCircleRadius = 0;
-    size_t MaxCircleIndex = 0;
-    for (size_t i = 0; i < circles.size(); i++)//find the biggest circles
-    {
-        if(cvRound(circles[i][2]) > MaxCircleRadius)
-        {
-            MaxCircleRadius =  cvRound(circles[i][2]);
-            MaxCircleIndex = i;
-        }
-    }
 
+	//find all circles , Hough Circles
 	static Point3f Position(img_compress_width/2, img_compress_height/2, minRadius);//z is the radius of circle
 
-	if(circles.size() != 0)
-	{
-		Point center(cvRound(circles[MaxCircleIndex][0]), cvRound(circles[MaxCircleIndex][1]));
-		Position.x = cvRound(circles[MaxCircleIndex][0]);
-		Position.y = cvRound(circles[MaxCircleIndex][1]);
-		Position.z = cvRound(circles[MaxCircleIndex][2]);
-		//int radius = cvRound(circles[MaxCircleIndex][2]);
-		circle(img, center, Position.z, Scalar(255, 255, 255), 2, 8, 0);// Hough Circles
-	}
-	return {Position, img};
+    for (size_t i = 0; i < circles.size(); i++)
+    {
+		Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+		Position.x = cvRound(circles[i][0]);
+		Position.y = cvRound(circles[i][1]);
+		Position.z = cvRound(circles[i][2]);
+		circle(ImageProcessed, center, Position.z, Scalar(255, 255, 255), 2, 8, 0);
+    }
+	
+	return {Position, ImageProcessed};
 }
 
 
@@ -182,14 +178,21 @@ void imageCallback(const sensor_msgs::Image::ConstPtr& msg)
 	ImageStamped = msg->header.stamp;
 
 	cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-	Mat image_raw = cv_ptr -> image;
+	Mat image_raw = cv_ptr->image;
 
 	ImageProcessed = Table_Tennis_Pos(image_raw);
 
+	/* publish  RosImageProcessed*/
 	RosImageProcessed = cv_bridge::CvImage(std_msgs::Header(), "bgr8", ImageProcessed.second).toImageMsg(); 
 	RosImageProcessed->header.stamp = ImageStamped;
 	RosImageProcessed->header.frame_id = "image_processed_Frame";
+
+	/* publish  RosImageProcessed*/
+	RosImgThresholded = cv_bridge::CvImage(std_msgs::Header(), "mono8", ImageThresholded).toImageMsg(); 
+	RosImgThresholded->header.stamp = ImageStamped;
+	RosImgThresholded->header.frame_id = "image_thresholded_Frame";
 	
+	/* publish  position of ball*/
 	BallPos.point.x = ImageProcessed.first.x;
 	BallPos.point.y = ImageProcessed.first.y;
 	BallPos.point.z = 100 - ImageProcessed.first.z;
@@ -203,10 +206,11 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "image_process");
     ros::NodeHandle nh;
 
-    ros::Publisher BallPosPub = nh.advertise<geometry_msgs::PointStamped>("/Ball/Pos", 10);
-    image_transport::ImageTransport it(nh); //用之前声明的节点句柄初始化it，其实这里的it和nh的功能基本一样，可以像之前一样使用it来发布和订阅相消息。
-    image_transport::Publisher ImagePub = it.advertise("camera/rgb/image_processed", 1);
-	image_transport::Subscriber sub = it.subscribe("/usb_cam/image_raw", 1, imageCallback);
+    ros::Publisher BallPos_pub = nh.advertise<geometry_msgs::PointStamped>("/Ball/Pos", 10);
+    image_transport::ImageTransport it(nh); 
+    image_transport::Publisher ImageProcessed_pub = it.advertise("camera/rgb/image_processed", 1);
+	image_transport::Publisher ImageThresholded_pub = it.advertise("camera/rgb/image_thresholded", 1);
+	image_transport::Subscriber image_raw_sub = it.subscribe("/usb_cam/image_raw", 1, imageCallback);
 
     sensor_msgs::ImagePtr msg1;
 
@@ -214,8 +218,9 @@ int main(int argc, char **argv)
 
     while (nh.ok())
     {
-		ImagePub.publish(RosImageProcessed);
-		BallPosPub.publish(BallPos);
+		ImageProcessed_pub.publish(RosImageProcessed);
+		ImageThresholded_pub.publish(RosImgThresholded);
+		BallPos_pub.publish(BallPos);
 
         ros::spinOnce();
         loop_rate.sleep();

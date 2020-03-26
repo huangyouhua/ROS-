@@ -361,19 +361,6 @@ roscpp_generate_messages_cpp/fast:
 .PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named table_tennis
-
-# Build rule for target.
-table_tennis: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 table_tennis
-.PHONY : table_tennis
-
-# fast build rule for target.
-table_tennis/fast:
-	$(MAKE) -f object_recognition/CMakeFiles/table_tennis.dir/build.make object_recognition/CMakeFiles/table_tennis.dir/build
-.PHONY : table_tennis/fast
-
-#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_py
 
 # Build rule for target.
@@ -463,19 +450,6 @@ sensor_msgs_generate_messages_eus: cmake_check_build_system
 sensor_msgs_generate_messages_eus/fast:
 	$(MAKE) -f object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named recognition
-
-# Build rule for target.
-recognition: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 recognition
-.PHONY : recognition
-
-# fast build rule for target.
-recognition/fast:
-	$(MAKE) -f object_recognition/CMakeFiles/recognition.dir/build.make object_recognition/CMakeFiles/recognition.dir/build
-.PHONY : recognition/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
@@ -674,7 +648,6 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
-	@echo "... table_tennis"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -682,7 +655,6 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... recognition"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_py"

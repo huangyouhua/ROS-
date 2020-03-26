@@ -391,8 +391,6 @@ clean: gtest/gtest/CMakeFiles/gtest_main.dir/clean
 
 # Convenience name for "all" pass in the directory.
 object_recognition/all: object_recognition/CMakeFiles/image_process.dir/all
-object_recognition/all: object_recognition/CMakeFiles/table_tennis.dir/all
-object_recognition/all: object_recognition/CMakeFiles/recognition.dir/all
 
 .PHONY : object_recognition/all
 
@@ -403,7 +401,6 @@ object_recognition/clean: object_recognition/CMakeFiles/geometry_msgs_generate_m
 object_recognition/clean: object_recognition/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-object_recognition/clean: object_recognition/CMakeFiles/table_tennis.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
@@ -411,7 +408,6 @@ object_recognition/clean: object_recognition/CMakeFiles/sensor_msgs_generate_mes
 object_recognition/clean: object_recognition/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-object_recognition/clean: object_recognition/CMakeFiles/recognition.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 object_recognition/clean: object_recognition/CMakeFiles/roscpp_generate_messages_py.dir/clean
@@ -655,67 +651,6 @@ clean: object_recognition/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target object_recognition/CMakeFiles/table_tennis.dir
-
-# All Build rule for target.
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_py.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_py.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/table_tennis.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-	$(MAKE) -f object_recognition/CMakeFiles/table_tennis.dir/build.make object_recognition/CMakeFiles/table_tennis.dir/depend
-	$(MAKE) -f object_recognition/CMakeFiles/table_tennis.dir/build.make object_recognition/CMakeFiles/table_tennis.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hyh/mc_ws/build/CMakeFiles --progress-num=16,17 "Built target table_tennis"
-.PHONY : object_recognition/CMakeFiles/table_tennis.dir/all
-
-# Include target in all.
-all: object_recognition/CMakeFiles/table_tennis.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-object_recognition/CMakeFiles/table_tennis.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyh/mc_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 object_recognition/CMakeFiles/table_tennis.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyh/mc_ws/build/CMakeFiles 0
-.PHONY : object_recognition/CMakeFiles/table_tennis.dir/rule
-
-# Convenience name for target.
-table_tennis: object_recognition/CMakeFiles/table_tennis.dir/rule
-
-.PHONY : table_tennis
-
-# clean rule for target.
-object_recognition/CMakeFiles/table_tennis.dir/clean:
-	$(MAKE) -f object_recognition/CMakeFiles/table_tennis.dir/build.make object_recognition/CMakeFiles/table_tennis.dir/clean
-.PHONY : object_recognition/CMakeFiles/table_tennis.dir/clean
-
-# clean rule for target.
-clean: object_recognition/CMakeFiles/table_tennis.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir
 
 # All Build rule for target.
@@ -936,67 +871,6 @@ object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
 
 # clean rule for target.
 clean: object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target object_recognition/CMakeFiles/recognition.dir
-
-# All Build rule for target.
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_py.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_py.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_eus.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-object_recognition/CMakeFiles/recognition.dir/all: object_recognition/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-	$(MAKE) -f object_recognition/CMakeFiles/recognition.dir/build.make object_recognition/CMakeFiles/recognition.dir/depend
-	$(MAKE) -f object_recognition/CMakeFiles/recognition.dir/build.make object_recognition/CMakeFiles/recognition.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hyh/mc_ws/build/CMakeFiles --progress-num=14,15 "Built target recognition"
-.PHONY : object_recognition/CMakeFiles/recognition.dir/all
-
-# Include target in all.
-all: object_recognition/CMakeFiles/recognition.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-object_recognition/CMakeFiles/recognition.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyh/mc_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 object_recognition/CMakeFiles/recognition.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyh/mc_ws/build/CMakeFiles 0
-.PHONY : object_recognition/CMakeFiles/recognition.dir/rule
-
-# Convenience name for target.
-recognition: object_recognition/CMakeFiles/recognition.dir/rule
-
-.PHONY : recognition
-
-# clean rule for target.
-object_recognition/CMakeFiles/recognition.dir/clean:
-	$(MAKE) -f object_recognition/CMakeFiles/recognition.dir/build.make object_recognition/CMakeFiles/recognition.dir/clean
-.PHONY : object_recognition/CMakeFiles/recognition.dir/clean
-
-# clean rule for target.
-clean: object_recognition/CMakeFiles/recognition.dir/clean
 
 .PHONY : clean
 

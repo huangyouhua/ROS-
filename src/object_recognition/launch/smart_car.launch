@@ -1,5 +1,0 @@
-<launch>
-
-  <node name="table_tennis" pkg="object_recognition" type="table_tennis" output="screen"/>
-
-</launch>

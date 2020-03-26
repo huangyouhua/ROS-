@@ -1,15 +1,7 @@
 <launch>
 
-  <!--launch the usb camera and astra_pro depth camera-->
-  <!--<include file="$(find astra_launch)/launch/astrapro.launch">
-  </include>-->
-
-  <!--<include file="$(find usb_cam)/launch/usb_cam-test.launch">
-  </include>-->
-
-
   <node name="image_process" pkg="object_recognition" type="image_process" output="screen">
-  <remap from="/usb_cam/image_raw"  to="/kinect/rgb/image_raw" />
+    <remap from="/usb_cam/image_raw"  to="/mbot/kinect/rgb/image_raw" />
   </node>
 
 

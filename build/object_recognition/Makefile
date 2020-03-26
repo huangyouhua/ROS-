@@ -256,21 +256,6 @@ roscpp_generate_messages_cpp/fast:
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
-object_recognition/CMakeFiles/table_tennis.dir/rule:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f CMakeFiles/Makefile2 object_recognition/CMakeFiles/table_tennis.dir/rule
-.PHONY : object_recognition/CMakeFiles/table_tennis.dir/rule
-
-# Convenience name for target.
-table_tennis: object_recognition/CMakeFiles/table_tennis.dir/rule
-
-.PHONY : table_tennis
-
-# fast build rule for target.
-table_tennis/fast:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/table_tennis.dir/build.make object_recognition/CMakeFiles/table_tennis.dir/build
-.PHONY : table_tennis/fast
-
-# Convenience name for target.
 object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
 	cd /home/hyh/mc_ws/build && $(MAKE) -f CMakeFiles/Makefile2 object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 .PHONY : object_recognition/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
@@ -374,21 +359,6 @@ sensor_msgs_generate_messages_eus: object_recognition/CMakeFiles/sensor_msgs_gen
 sensor_msgs_generate_messages_eus/fast:
 	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make object_recognition/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-object_recognition/CMakeFiles/recognition.dir/rule:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f CMakeFiles/Makefile2 object_recognition/CMakeFiles/recognition.dir/rule
-.PHONY : object_recognition/CMakeFiles/recognition.dir/rule
-
-# Convenience name for target.
-recognition: object_recognition/CMakeFiles/recognition.dir/rule
-
-.PHONY : recognition
-
-# fast build rule for target.
-recognition/fast:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/recognition.dir/build.make object_recognition/CMakeFiles/recognition.dir/build
-.PHONY : recognition/fast
 
 # Convenience name for target.
 object_recognition/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
@@ -612,60 +582,6 @@ src/image_process.cpp.s:
 	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/image_process.dir/build.make object_recognition/CMakeFiles/image_process.dir/src/image_process.cpp.s
 .PHONY : src/image_process.cpp.s
 
-src/recognition.o: src/recognition.cpp.o
-
-.PHONY : src/recognition.o
-
-# target to build an object file
-src/recognition.cpp.o:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/recognition.dir/build.make object_recognition/CMakeFiles/recognition.dir/src/recognition.cpp.o
-.PHONY : src/recognition.cpp.o
-
-src/recognition.i: src/recognition.cpp.i
-
-.PHONY : src/recognition.i
-
-# target to preprocess a source file
-src/recognition.cpp.i:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/recognition.dir/build.make object_recognition/CMakeFiles/recognition.dir/src/recognition.cpp.i
-.PHONY : src/recognition.cpp.i
-
-src/recognition.s: src/recognition.cpp.s
-
-.PHONY : src/recognition.s
-
-# target to generate assembly for a file
-src/recognition.cpp.s:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/recognition.dir/build.make object_recognition/CMakeFiles/recognition.dir/src/recognition.cpp.s
-.PHONY : src/recognition.cpp.s
-
-src/table_tennis.o: src/table_tennis.cpp.o
-
-.PHONY : src/table_tennis.o
-
-# target to build an object file
-src/table_tennis.cpp.o:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/table_tennis.dir/build.make object_recognition/CMakeFiles/table_tennis.dir/src/table_tennis.cpp.o
-.PHONY : src/table_tennis.cpp.o
-
-src/table_tennis.i: src/table_tennis.cpp.i
-
-.PHONY : src/table_tennis.i
-
-# target to preprocess a source file
-src/table_tennis.cpp.i:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/table_tennis.dir/build.make object_recognition/CMakeFiles/table_tennis.dir/src/table_tennis.cpp.i
-.PHONY : src/table_tennis.cpp.i
-
-src/table_tennis.s: src/table_tennis.cpp.s
-
-.PHONY : src/table_tennis.s
-
-# target to generate assembly for a file
-src/table_tennis.cpp.s:
-	cd /home/hyh/mc_ws/build && $(MAKE) -f object_recognition/CMakeFiles/table_tennis.dir/build.make object_recognition/CMakeFiles/table_tennis.dir/src/table_tennis.cpp.s
-.PHONY : src/table_tennis.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -684,7 +600,6 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
-	@echo "... table_tennis"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -693,7 +608,6 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... list_install_components"
 	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... recognition"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_py"
@@ -710,12 +624,6 @@ help:
 	@echo "... src/image_process.o"
 	@echo "... src/image_process.i"
 	@echo "... src/image_process.s"
-	@echo "... src/recognition.o"
-	@echo "... src/recognition.i"
-	@echo "... src/recognition.s"
-	@echo "... src/table_tennis.o"
-	@echo "... src/table_tennis.i"
-	@echo "... src/table_tennis.s"
 .PHONY : help
 
 
