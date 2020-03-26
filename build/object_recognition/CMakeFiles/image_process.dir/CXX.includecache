@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+/home/hyh/mc_ws/devel/include/ball_msgs/BallPositionStamp.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+geometry_msgs/Point.h
+-
+
 /home/hyh/mc_ws/src/object_recognition/include/image_process.h
 ros/ros.h
 -
@@ -28,6 +48,8 @@ vector
 string
 -
 utility
+-
+geometry_msgs/Point.h
 -
 
 /home/hyh/mc_ws/src/object_recognition/src/image_process.cpp
@@ -62,6 +84,10 @@ vector
 geometry_msgs/Twist.h
 -
 geometry_msgs/PointStamped.h
+-
+geometry_msgs/Point.h
+-
+ball_msgs/BallPositionStamp.h
 -
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h

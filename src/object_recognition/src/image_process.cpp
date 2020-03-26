@@ -14,17 +14,18 @@
 #include <vector>
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/PointStamped.h>
+#include <geometry_msgs/Point.h>
+#include <ball_msgs/BallPositionStamp.h>
 
 using namespace cv;
 using namespace std;
 
-pair<Point3f, Mat> ImageProcessed;
 Mat ImageThresholded;//二值化后的图像数组
+Mat ImageProcessed;//处理后的图像，画出小球的轮廓
 sensor_msgs::ImagePtr RosImgThresholded;
 sensor_msgs::ImagePtr RosImageProcessed;
+ball_msgs::BallPositionStamp BallPosition;//z is the radius of circle
 
-
-geometry_msgs::PointStamped BallPos;
 ros::Time ImageStamped;
 
 vector<Mat> GetOriginalImg(const string img_path)
@@ -130,11 +131,10 @@ Mat myfindContours(Mat image)
     return imageContours;  
 }  
 
-pair<Point3f, Mat> Table_Tennis_Pos(Mat img)
+void Table_Tennis_Pos(Mat img)
 {
     Mat canny_output;
 	Mat imgHSV;
-	Mat ImageProcessed;//处理后的图像，画出小球的轮廓
 	Mat bf;//对灰度图像进行双边滤波
 	Mat element = getStructuringElement(MORPH_RECT, Size(5, 5));
     vector<Mat> hsvSplit;
@@ -158,18 +158,19 @@ pair<Point3f, Mat> Table_Tennis_Pos(Mat img)
 
 
 	//find all circles , Hough Circles
-	static Point3f Position(img_compress_width/2, img_compress_height/2, minRadius);//z is the radius of circle
+	geometry_msgs::Point tempPos;
+	BallPosition.Position.clear();
 
     for (size_t i = 0; i < circles.size(); i++)
     {
 		Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
-		Position.x = cvRound(circles[i][0]);
-		Position.y = cvRound(circles[i][1]);
-		Position.z = cvRound(circles[i][2]);
-		circle(ImageProcessed, center, Position.z, Scalar(255, 255, 255), 2, 8, 0);
+		tempPos.x = cvRound(circles[i][0]);
+		tempPos.y = cvRound(circles[i][1]);
+		tempPos.z = cvRound(circles[i][2]);
+		circle(ImageProcessed, center, tempPos.z, Scalar(255, 255, 255), 2, 8, 0);
+		//Position..push_back(tempPos);
+		BallPosition.Position.push_back(tempPos);
     }
-	
-	return {Position, ImageProcessed};
 }
 
 
@@ -180,10 +181,10 @@ void imageCallback(const sensor_msgs::Image::ConstPtr& msg)
 	cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
 	Mat image_raw = cv_ptr->image;
 
-	ImageProcessed = Table_Tennis_Pos(image_raw);
+	Table_Tennis_Pos(image_raw);
 
 	/* publish  RosImageProcessed*/
-	RosImageProcessed = cv_bridge::CvImage(std_msgs::Header(), "bgr8", ImageProcessed.second).toImageMsg(); 
+	RosImageProcessed = cv_bridge::CvImage(std_msgs::Header(), "bgr8", ImageProcessed).toImageMsg(); 
 	RosImageProcessed->header.stamp = ImageStamped;
 	RosImageProcessed->header.frame_id = "image_processed_Frame";
 
@@ -193,11 +194,8 @@ void imageCallback(const sensor_msgs::Image::ConstPtr& msg)
 	RosImgThresholded->header.frame_id = "image_thresholded_Frame";
 	
 	/* publish  position of ball*/
-	BallPos.point.x = ImageProcessed.first.x;
-	BallPos.point.y = ImageProcessed.first.y;
-	BallPos.point.z = 100 - ImageProcessed.first.z;
-	BallPos.header.stamp = ImageStamped;
-	BallPos.header.frame_id = "Ball_Frame";
+	BallPosition.header.stamp = ImageStamped;
+	BallPosition.header.frame_id = "Ball_Frame";
 }
 
 
@@ -206,7 +204,7 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "image_process");
     ros::NodeHandle nh;
 
-    ros::Publisher BallPos_pub = nh.advertise<geometry_msgs::PointStamped>("/Ball/Pos", 10);
+    ros::Publisher BallPos_pub = nh.advertise<ball_msgs::BallPositionStamp>("/Ball/Position", 10);
     image_transport::ImageTransport it(nh); 
     image_transport::Publisher ImageProcessed_pub = it.advertise("camera/rgb/image_processed", 1);
 	image_transport::Publisher ImageThresholded_pub = it.advertise("camera/rgb/image_thresholded", 1);
@@ -220,7 +218,7 @@ int main(int argc, char **argv)
     {
 		ImageProcessed_pub.publish(RosImageProcessed);
 		ImageThresholded_pub.publish(RosImgThresholded);
-		BallPos_pub.publish(BallPos);
+		BallPos_pub.publish(BallPosition);
 
         ros::spinOnce();
         loop_rate.sleep();

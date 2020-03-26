@@ -1,2 +1,2 @@
-mbot_control:mbot_description_gazebo:mbot_navigation_gazebo:object_recognition:pick_ball_mbot_control:pick_ball_mbot_description:table_tennis_scene
+ball_msgs:mbot_control:mbot_description_gazebo:mbot_navigation_gazebo:object_recognition:pick_ball_mbot_control:pick_ball_mbot_description:table_tennis_scene
 -DCATKIN_DEVEL_PREFIX=/home/hyh/mc_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hyh/mc_ws/install -G Unix Makefiles
