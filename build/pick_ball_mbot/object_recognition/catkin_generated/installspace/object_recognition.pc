@@ -1,0 +1,8 @@
+prefix=/home/hyh/mc_ws/install
+
+Name: object_recognition
+Description: Description of object_recognition
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

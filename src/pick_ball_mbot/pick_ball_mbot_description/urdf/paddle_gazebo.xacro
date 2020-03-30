@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="paddle">
+
+    <xacro:include filename="$(find pick_ball_mbot_description)/urdf/joint_transmission_gazebo.xacro" />
+    <xacro:include filename="$(find pick_ball_mbot_description)/urdf/paddle_base.xacro" />
+
+    <xacro:macro name="paddle_gazebo">
+
+        <paddle_base/>
+
+        <joint_trans joint_name="paddle_joint"/>
+
+        <gazebo>
+            <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+                <robotNamespace>/pick_ball_mbot</robotNamespace>
+                <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+                <legacyModeNS>true</legacyModeNS>
+                </plugin>
+        </gazebo>
+
+    </xacro:macro>
+
+</robot>

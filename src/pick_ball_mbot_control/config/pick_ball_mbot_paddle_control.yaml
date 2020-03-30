@@ -1,9 +1,0 @@
-pick_ball_mbot:
-
-  paddle_joint_velocity_controller:
-    type: velocity_controllers/JointVelocityController
-    joint: paddle_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-
-
-

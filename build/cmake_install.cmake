@@ -126,14 +126,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/hyh/mc_ws/build/gtest/cmake_install.cmake")
-  include("/home/hyh/mc_ws/build/mbot_control/cmake_install.cmake")
-  include("/home/hyh/mc_ws/build/ball_msgs/cmake_install.cmake")
-  include("/home/hyh/mc_ws/build/mbot_navigation_gazebo/cmake_install.cmake")
-  include("/home/hyh/mc_ws/build/object_recognition/cmake_install.cmake")
-  include("/home/hyh/mc_ws/build/pick_ball_mbot_control/cmake_install.cmake")
-  include("/home/hyh/mc_ws/build/table_tennis_scene/cmake_install.cmake")
-  include("/home/hyh/mc_ws/build/mbot_description_gazebo/cmake_install.cmake")
-  include("/home/hyh/mc_ws/build/pick_ball_mbot_description/cmake_install.cmake")
+  include("/home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_control/cmake_install.cmake")
 
 endif()
 

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="paddle">
+
+    <xacro:macro name="paddle_base">
+        <link name="paddle">
+            <inertial>
+            <origin
+                xyz="0.0097338 -1.7902E-14 -7.9264E-13"
+                rpy="0 0 0" />
+            <mass
+                value="0.16555" />
+            <inertia
+                ixx="0.00063183"
+                ixy="3.4087E-17"
+                ixz="-5.3664E-15"
+                iyy="0.00050637"
+                iyz="1.4736E-13"
+                izz="0.00050637" />
+            </inertial>
+            <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://pick_ball_mbot_description/meshes/paddle.STL" />
+            </geometry>
+            <material
+                name="">
+                <color
+                rgba="1 1 1 1" />
+            </material>
+            </visual>
+            <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://pick_ball_mbot_description/meshes/paddle.STL" />
+            </geometry>
+            </collision>
+        </link>
+
+    </xacro:macro>
+
+</robot>
