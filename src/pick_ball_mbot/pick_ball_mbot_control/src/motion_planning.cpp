@@ -108,7 +108,7 @@ void PosCallback(const ball_msgs::BallPositionStamp::ConstPtr &BallPositionStamp
     GoalPosition = PostionFilter(GoalPosition);
 
     /* According to the position of balls to publish velocity */
-    vel_msg.angular.z = 0.1 * (GoalPosition.x - 320);
+    vel_msg.angular.z = 0.05 * (GoalPosition.x - 320);
     vel_msg.linear.x = 0.3;
 
 }
@@ -122,7 +122,7 @@ int main(int argc, char **argv)
     ros::Subscriber BallPos_sub = nh.subscribe("/Ball/Position", 10, &PosCallback);
 
     /* define the publish frequency */
-    ros::Rate loop_rate(30); 
+    ros::Rate loop_rate(100); 
 
     while (nh.ok())
     {

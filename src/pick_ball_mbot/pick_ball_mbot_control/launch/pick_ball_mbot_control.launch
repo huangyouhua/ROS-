@@ -16,37 +16,23 @@
         <arg name="headless" value="$(arg headless)"/>
     </include>
 
-    <param name="pick_ball_mbot/robot_description" command="$(find xacro)/xacro --inorder '$(find pick_ball_mbot_description)/urdf/pick_ball_mbot_gazebo.xacro'" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find pick_ball_mbot_description)/urdf/pick_ball_mbot_gazebo.xacro'" />
 
-    <node name="urdf_spawner" pkg="gazebo_ros" ns="pick_ball_mbot" type="spawn_model" respawn="false" output="screen"
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
       args="-urdf -model pick_ball_mbot -param robot_description -x 3 -y 1 -z 0"/>
 
-    <node name="robot_state_publisher" ns="pick_ball_mbot" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-       <remap from="/joint_states" to="/pick_ball_mbot/joint_states" /> 
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
     </node>
 
-    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" ns="pick_ball_mbot">
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
         <param name="rate" value="50" />
     </node>
 
-    <!--<rosparam file="$(find pick_ball_mbot_control)/config/pick_ball_mbot_paddle_control.yaml" command="load"/>
-    <rosparam file="$(find pick_ball_mbot_control)/config/pick_ball_mbot_diff_control.yaml" command="load"/>
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/pick_ball_mbot" args="joint_state_controller
-      mobile_base_controller paddle_joint_velocity_controller ">
-    </node>-->
-
     <rosparam file="$(find pick_ball_mbot_control)/config/pick_ball_mbot_paddle_control.yaml" command="load"/>
-    <!--<rosparam file="$(find pick_ball_mbot_control)/config/pick_ball_mbot_diff_control.yaml" command="load"/>-->
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/pick_ball_mbot" args="joint_state_controller
-       paddle_joint_velocity_controller ">
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/pick_ball_mbot" args="paddle_joint_velocity_controller ">
     </node>
 
     <include file="$(find object_recognition)/launch/object_recognition.launch" >
-        <arg name="imame_raw_topic" default="/pick_ball_mbot/kinect/rgb/image_raw" />
-    </include>
-
-    <include file="$(find mbot_teleop)/launch/mbot_teleop.launch" >
-        <arg name="cmd_vel_topic" value="/pick_ball_mbot/mobile_base_controller/cmd_vel" />
     </include>
 
 </launch>

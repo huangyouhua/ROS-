@@ -2,9 +2,10 @@
 <robot name="pick_ball_mbot_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
     
     <xacro:property name="M_PI" value="3.1415926"/>
-    <xacro:property name="collector_mass_multiplier" value="15"/>
-    <xacro:property name="base_link_mass_multiplier" value="8"/>
-    <xacro:property name="cover_mass_multiplier" value="1"/>
+    <xacro:property name="collector_mass_multiplier" value="2"/>
+    <xacro:property name="base_link_mass_multiplier" value="2"/>
+    <xacro:property name="cover_mass_multiplier" value="2"/>
+    <xacro:property name="wheel_mass_multiplier" value="2"/>
 
     <xacro:macro name="pick_ball_mbot_base_gazebo">
         <link name="base_footprint">
@@ -41,6 +42,7 @@
             iyz="${base_link_mass_multiplier*(-0.00014855)}"
             izz="${base_link_mass_multiplier*0.0038702}" />
         </inertial>
+
         <visual>
         <origin
             xyz="0 0 0"
@@ -72,14 +74,14 @@
             xyz="2.294E-12 5.7715E-13 0.014824"
             rpy="0 0 0" />
         <mass
-            value="0.093783" />
+            value="${wheel_mass_multiplier*0.093783}" />
         <inertia
-            ixx="3.0979E-05"
-            ixy="-6.7569E-09"
-            ixz="-6.6396E-15"
-            iyy="3.1004E-05"
-            iyz="-1.6704E-15"
-            izz="4.7784E-05" />
+            ixx="${wheel_mass_multiplier*(3.0979E-05)}"
+            ixy="${wheel_mass_multiplier*(-6.7569E-09)}"
+            ixz="${wheel_mass_multiplier*(-6.6396E-15)}"
+            iyy="${wheel_mass_multiplier*(3.1004E-05)}"
+            iyz="${wheel_mass_multiplier*(-1.6704E-15)}"
+            izz="${wheel_mass_multiplier*(4.7784E-05)}" />
         </inertial>
         <visual>
         <origin
@@ -125,14 +127,14 @@
             xyz="-2.3483E-12 -2.8497E-13 0.014176"
             rpy="0 0 0" />
         <mass
-            value="0.093783" />
+            value="${wheel_mass_multiplier*0.093783}" />
         <inertia
-            ixx="3.0978E-05"
-            ixy="-3.4152E-09"
-            ixz="-6.7962E-15"
-            iyy="3.1005E-05"
-            iyz="-8.2473E-16"
-            izz="4.7784E-05" />
+            ixx="${wheel_mass_multiplier*(3.0978E-05)}"
+            ixy="${wheel_mass_multiplier*(-3.4152E-09)}"
+            ixz="${wheel_mass_multiplier*(-6.7962E-15)}"
+            iyy="${wheel_mass_multiplier*(3.1005E-05)}"
+            iyz="${wheel_mass_multiplier*(-8.2473E-16)}"
+            izz="${wheel_mass_multiplier*(4.7784E-05)}" />
         </inertial>
         <visual>
         <origin
@@ -178,14 +180,14 @@
             xyz="-1.49956436157339E-13 3.20965476419133E-12 0.0148235876551461"
             rpy="0 0 0" />
         <mass
-            value="0.0937829390237726" />
+            value="${wheel_mass_multiplier*0.093783}" />
         <inertia
-            ixx="3.10054780216612E-05"
-            ixy="1.32435143883117E-09"
-            ixz="2.9614191177372E-16"
-            iyy="3.09771986932004E-05"
-            iyz="-6.33701481449748E-15"
-            izz="4.77838078287252E-05" />
+            ixx="${wheel_mass_multiplier*(3.10054780216612E-05)}"
+            ixy="${wheel_mass_multiplier*(1.32435143883117E-09)}"
+            ixz="${wheel_mass_multiplier*(2.9614191177372E-16)}"
+            iyy="${wheel_mass_multiplier*(3.09771986932004E-05)}"
+            iyz="${wheel_mass_multiplier*(-6.33701481449748E-15)}"
+            izz="${wheel_mass_multiplier*(4.77838078287252E-05)}" />
         </inertial>
         <visual>
         <origin
@@ -231,14 +233,14 @@
             xyz="3.21307563888595E-12 -1.42802436542411E-14 0.0141764123448602"
             rpy="0 0 0" />
         <mass
-            value="0.0937829390237727" />
+            value="${wheel_mass_multiplier*0.093783}" />
         <inertia
-            ixx="3.09771374888205E-05"
-            ixy="1.39076431308829E-10"
-            ixz="6.3436675045065E-15"
-            iyy="3.10055392260229E-05"
-            iyz="-2.99974052448107E-17"
-            izz="4.77838078287253E-05" />
+            ixx="${wheel_mass_multiplier*(3.09771374888205E-05)}"
+            ixy="${wheel_mass_multiplier*(1.39076431308829E-10)}"
+            ixz="${wheel_mass_multiplier*(6.3436675045065E-15)}"
+            iyy="${wheel_mass_multiplier*(3.10055392260229E-05)}"
+            iyz="${wheel_mass_multiplier*(-2.99974052448107E-17)}"
+            izz="${wheel_mass_multiplier*(4.77838078287253E-05)}" />
         </inertial>
         <visual>
         <origin
@@ -330,6 +332,7 @@
         <axis
         xyz="0 0 0" />
     </joint>
+
     <link
         name="left_cover">
         <inertial>
@@ -337,14 +340,14 @@
             xyz="0.035432 0.17477 0.10116"
             rpy="0 0 0" />
         <mass
-            value="0.35719" />
+            value="${cover_mass_multiplier*(0.35719)}" />
         <inertia
-            ixx="0.0023208"
-            ixy="-0.00015274"
-            ixz="-8.1174E-05"
-            iyy="0.0020745"
-            iyz="-0.00030739"
-            izz="0.0010449" />
+            ixx="${cover_mass_multiplier*(0.0023208)}"
+            ixy="${cover_mass_multiplier*(-0.00015274)}"
+            ixz="${cover_mass_multiplier*(-8.1174E-05)}"
+            iyy="${cover_mass_multiplier*(0.0020745)}"
+            iyz="${cover_mass_multiplier*(-0.00030739)}"
+            izz="${cover_mass_multiplier*(0.0010449)}" />
         </inertial>
         <visual>
         <origin
@@ -391,14 +394,14 @@
             xyz="-0.011894 -0.037433 0.0055616"
             rpy="0 0 0" />
         <mass
-            value="0.11834" />
+            value="${cover_mass_multiplier*(0.11834)}" />
         <inertia
-            ixx="0.00023044"
-            ixy="-3.8219E-06"
-            ixz="2.9166E-05"
-            iyy="0.00047003"
-            iyz="-3.578E-05"
-            izz="0.00064825" />
+            ixx="${cover_mass_multiplier*(0.00023044)}"
+            ixy="${cover_mass_multiplier*(-3.8219E-06)}"
+            ixz="${cover_mass_multiplier*(2.9166E-05)}"
+            iyy="${cover_mass_multiplier*(0.00047003)}"
+            iyz="${cover_mass_multiplier*(-3.578E-05)}"
+            izz="${cover_mass_multiplier*(0.00064825)}" />
         </inertial>
         <visual>
         <origin
@@ -437,6 +440,7 @@
         <axis
         xyz="0 0 0" />
     </joint>
+
     <link
         name="support_rod">
         <inertial>

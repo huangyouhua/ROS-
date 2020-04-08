@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="extend_board">
+
+    <xacro:macro name="default_inertial" params="mass">
+               <inertial>
+                       <mass value="${mass}" />
+                       <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+                                iyy="1.0" iyz="0.0"
+                                izz="1.0" />
+               </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="extend_board">
+        <link name="extend_board">
+            <visual>
+                <geometry>
+                        <box size="0.1 0.1 0.004"/>
+                    </geometry>
+                <origin rpy="0 0 1.57075" xyz="0 0 0"/>
+                <material name="white">
+                    <color rgba="1 1 1 1"/>
+                </material>
+            </visual>
+            <collision>
+                <geometry>
+                        <box size="0.1 0.1 0.004"/>
+                </geometry>
+            </collision>
+            <xacro:default_inertial mass="0.002"/>
+        </link>
+
+        <gazebo reference="extend_board">
+            <material>Gazebo/Grey</material>
+        </gazebo>
+
+    </xacro:macro>
+</robot>

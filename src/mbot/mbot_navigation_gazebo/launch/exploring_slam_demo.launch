@@ -4,7 +4,7 @@
 
     <!-- 运行move_base节点 -->
     <include file="$(find mbot_navigation_gazebo)/launch/move_base.launch" >
-        <arg name="cmd_vel_topic" value="/mbot/mobile_base_controller/cmd_vel" />
+        <!--<arg name="cmd_vel_topic" value="/mbot/mobile_base_controller/cmd_vel" />-->
     </include>
 
     <!-- 运行rviz -->

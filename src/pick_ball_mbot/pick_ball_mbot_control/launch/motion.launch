@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="cmd_vel_topic" default="/pick_ball_mbot/mobile_base_controller/cmd_vel"/>
+  <arg name="cmd_vel_topic" default="/cmd_vel"/>
   <arg name="paddle_velocity_topic" default="/pick_ball_mbot/paddle_joint_velocity_controller/command"/>
 
   <node name="motion_planning" pkg="pick_ball_mbot_control" type="motion_planning" output="screen">

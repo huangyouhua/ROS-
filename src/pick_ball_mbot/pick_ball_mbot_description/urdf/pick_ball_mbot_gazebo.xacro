@@ -6,26 +6,46 @@
     <xacro:include filename="$(find pick_ball_mbot_description)/urdf/sensors/lidar_gazebo.xacro" />
     <xacro:include filename="$(find pick_ball_mbot_description)/urdf/joint_transmission_gazebo.xacro" />
     <xacro:include filename="$(find pick_ball_mbot_description)/urdf/paddle_gazebo.xacro" />
+    <xacro:include filename="$(find pick_ball_mbot_description)/urdf/extend_board.xacro" />
+    <xacro:include filename="$(find pick_ball_mbot_description)/urdf/top_stage_gazebo.xacro" />
 
 
-    <xacro:property name="wheel_mu" value="3"/>
+    <xacro:property name="wheel_mu1" value="10"/>
+    <xacro:property name="wheel_mu2" value="50"/>
 
-        <!-- kinect -->
-    <joint name="kinect_joint" type="fixed">
-        <!--<origin xyz="-0.00214019 0.22491813 0.25000000" rpy="1.57079028 0 3.14159265" />-->
-        <origin xyz="-0.0050 0.2250 0.251" rpy="0 0 1.5707" />
+    <!-- extend board -->
+    <joint name="extend_board_joint" type="fixed">
+        <origin xyz="-0.0050 0.295 0.238" rpy="0 0 1.5707" />
         <parent link="left_cover"/>
+        <child link="extend_board"/>
+    </joint>
+    <extend_board/>
+
+    <!-- kinect -->
+    <joint name="kinect_joint" type="fixed">
+        <origin xyz="0.05 0 0.01" rpy="0 0.55 0" />
+        <parent link="extend_board"/>
         <child link="kinect_link"/>
     </joint>
     <xacro:kinect_camera prefix="kinect"/>
 
+    <!-- top_stage -->
+    <joint name="top_stage_joint" type="fixed">
+        <origin xyz="0.015 0 0.015" rpy="0 0 0" />
+        <parent link="extend_board"/>
+        <child link="top_stage_link"/>
+    </joint>
+
+    <xacro:top_stage_link />
+
     <!-- lidar -->
     <joint name="lidar_joint" type="fixed">
-        <origin xyz="0 0 0.030" rpy="0 0 0" />
-        <parent link="kinect_link"/>
+        <origin xyz="0 0 0.02" rpy="0 0 0" />
+        <parent link="top_stage_link"/>
         <child link="laser_link"/>
     </joint>
     <xacro:rplidar prefix="laser"/>
+
 
     <!-- paddle -->
     <joint name="paddle_joint" type="continuous">
@@ -71,65 +91,52 @@
     </gazebo>
 
     <!-- friction -->
-    <gazebo reference="front_left_wheel">
-        <mu1>${wheel_mu}</mu1>
-        <mu2>${wheel_mu}</mu2>
+    <!--<gazebo reference="front_left_wheel">
+        <mu1>${wheel_mu1}</mu1>
+        <mu2>${wheel_mu2}</mu2>
     </gazebo>
 
     <gazebo reference="front_right_wheel">
-        <mu1>${wheel_mu}</mu1>
-        <mu2>${wheel_mu}</mu2>
+        <mu1>${wheel_mu1}</mu1>
+        <mu2>${wheel_mu2}</mu2>
     </gazebo>
 
     <gazebo reference="rear_left_wheel">
-        <mu1>${wheel_mu}</mu1>
-        <mu2>${wheel_mu}</mu2>
+        <mu1>${wheel_mu1}</mu1>
+        <mu2>${wheel_mu2}</mu2>
     </gazebo>
 
     <gazebo reference="rear_right_wheel">
-        <mu1>${wheel_mu}</mu1>
-        <mu2>${wheel_mu}</mu2>
-    </gazebo>
+        <mu1>${wheel_mu1}</mu1>
+        <mu2>${wheel_mu2}</mu2>
+    </gazebo>-->
 
     <!-- design transmission for joint-->
-    <joint_trans joint_name="front_right_wheel_joint"/>
+    <!--<joint_trans joint_name="front_right_wheel_joint"/>
     <joint_trans joint_name="front_left_wheel_joint"/>
-    <!--<joint_trans joint_name="rear_right_wheel_joint"/>
+    <joint_trans joint_name="rear_right_wheel_joint"/>
     <joint_trans joint_name="rear_left_wheel_joint"/>-->
-    <!--<joint_trans joint_name="paddle_joint"/>-->
+    <joint_trans joint_name="paddle_joint"/>
 
 
     <gazebo>
-        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-            <rosDebugLevel>Debug</rosDebugLevel>
-            <publishWheelTF>true</publishWheelTF>
+        <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+            <updateRate>50.0</updateRate>
             <robotNamespace>/</robotNamespace>
-            <publishTf>1</publishTf>
-            <publishWheelJointState>true</publishWheelJointState>
-            <alwaysOn>true</alwaysOn>
-            <updateRate>100.0</updateRate>
-            <legacyMode>true</legacyMode>
-            <leftJoint>front_left_wheel_joint</leftJoint>
-            <rightJoint>front_right_wheel_joint</rightJoint>
+            <leftFrontJoint>front_left_wheel_joint</leftFrontJoint>
+            <leftRearJoint>rear_left_wheel_joint</leftRearJoint>
+            <rightFrontJoint>front_right_wheel_joint</rightFrontJoint>
+            <rightRearJoint>rear_right_wheel_joint</rightRearJoint>
             <wheelSeparation>0.12</wheelSeparation>
             <wheelDiameter>0.064</wheelDiameter>
-            <broadcastTF>1</broadcastTF>
-            <wheelTorque>30</wheelTorque>
-            <wheelAcceleration>1.8</wheelAcceleration>
-            <commandTopic>cmd_vel</commandTopic>
-            <odometryFrame>odom</odometryFrame> 
-            <odometryTopic>odom</odometryTopic> 
+            <commandTopic>/cmd_vel</commandTopic>
+            <odometryTopic>odom</odometryTopic>
             <robotBaseFrame>base_footprint</robotBaseFrame>
+            <odometryFrame>odom</odometryFrame>
+            <torque>1</torque>
+            <topicName>/cmd_vel</topicName>
+            <broadcastTF>1</broadcastTF>
         </plugin>
-    </gazebo> 
-
-    <!-- design controller for joint-->
-    <!--<gazebo>
-        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/pick_ball_mbot</robotNamespace>
-            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-            <legacyModeNS>true</legacyModeNS>
-            </plugin>
-    </gazebo>-->
+    </gazebo>
 
 </robot>

@@ -1,7 +1,7 @@
 pick_ball_mbot:
-  joint_state_controller:
-    type: "joint_state_controller/JointStateController"
-    publish_rate: 50
+  # joint_state_controller:
+  #   type: "joint_state_controller/JointStateController"
+  #   publish_rate: 50
 
   paddle_joint_velocity_controller:
     type: velocity_controllers/JointVelocityController

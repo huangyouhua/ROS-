@@ -17,6 +17,9 @@
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
 
+//No help, variable specified on the command line.
+CATKIN-WHITELIST-PACKAGES:UNINITIALIZED=pick_ball_mbot_control
+
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
 
