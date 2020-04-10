@@ -7,7 +7,7 @@ project(mbot_navigation_gazebo)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS geometry_msgs move_base_msgs roscpp rospy actionlib actionlib_msgs std_msgs)
+find_package(catkin REQUIRED COMPONENTS geometry_msgs move_base_msgs roscpp rospy actionlib actionlib_msgs std_msgs pick_ball_mbot_msgs)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)

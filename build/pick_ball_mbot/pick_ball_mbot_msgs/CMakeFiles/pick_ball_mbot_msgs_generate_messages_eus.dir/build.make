@@ -55,6 +55,7 @@ include pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_genera
 
 pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_eus: /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/msg/BallPositionStamp.l
 pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_eus: /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/srv/void_obstacle.l
+pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_eus: /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/srv/PathPlanning.l
 pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_eus: /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/manifest.l
 
 
@@ -70,13 +71,19 @@ pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messa
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hyh/mc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from pick_ball_mbot_msgs/void_obstacle.srv"
 	cd /home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv -Ipick_ball_mbot_msgs:/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p pick_ball_mbot_msgs -o /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/srv
 
+/home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/srv/PathPlanning.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/srv/PathPlanning.l: /home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hyh/mc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from pick_ball_mbot_msgs/PathPlanning.srv"
+	cd /home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv -Ipick_ball_mbot_msgs:/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p pick_ball_mbot_msgs -o /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/srv
+
 /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hyh/mc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for pick_ball_mbot_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hyh/mc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp manifest code for pick_ball_mbot_msgs"
 	cd /home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs pick_ball_mbot_msgs std_msgs geometry_msgs
 
 pick_ball_mbot_msgs_generate_messages_eus: pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_eus
 pick_ball_mbot_msgs_generate_messages_eus: /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/msg/BallPositionStamp.l
 pick_ball_mbot_msgs_generate_messages_eus: /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/srv/void_obstacle.l
+pick_ball_mbot_msgs_generate_messages_eus: /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/srv/PathPlanning.l
 pick_ball_mbot_msgs_generate_messages_eus: /home/hyh/mc_ws/devel/share/roseus/ros/pick_ball_mbot_msgs/manifest.l
 pick_ball_mbot_msgs_generate_messages_eus: pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_eus.dir/build.make
 

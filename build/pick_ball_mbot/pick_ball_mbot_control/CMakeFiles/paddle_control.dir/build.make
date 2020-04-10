@@ -90,6 +90,7 @@ paddle_control_EXTERNAL_OBJECTS =
 
 /home/hyh/mc_ws/devel/lib/pick_ball_mbot_control/paddle_control: pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/paddle_control.dir/src/paddle_control.cpp.o
 /home/hyh/mc_ws/devel/lib/pick_ball_mbot_control/paddle_control: pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/paddle_control.dir/build.make
+/home/hyh/mc_ws/devel/lib/pick_ball_mbot_control/paddle_control: /opt/ros/kinetic/lib/libactionlib.so
 /home/hyh/mc_ws/devel/lib/pick_ball_mbot_control/paddle_control: /opt/ros/kinetic/lib/libroscpp.so
 /home/hyh/mc_ws/devel/lib/pick_ball_mbot_control/paddle_control: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/hyh/mc_ws/devel/lib/pick_ball_mbot_control/paddle_control: /usr/lib/x86_64-linux-gnu/libboost_signals.so

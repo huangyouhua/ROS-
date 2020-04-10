@@ -3,10 +3,14 @@
 
 pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/motion_planning.dir/src/motion_planning.cpp.o
  /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/BallPositionStamp.h
+ /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/PathPlanning.h
+ /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/PathPlanningRequest.h
+ /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/PathPlanningResponse.h
  /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/void_obstacle.h
  /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/void_obstacleRequest.h
  /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/void_obstacleResponse.h
  /home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_control/src/motion_planning.cpp
+ /opt/ros/kinetic/include/actionlib_msgs/GoalID.h
  /opt/ros/kinetic/include/geometry_msgs/Point.h
  /opt/ros/kinetic/include/geometry_msgs/PointStamped.h
  /opt/ros/kinetic/include/geometry_msgs/Twist.h

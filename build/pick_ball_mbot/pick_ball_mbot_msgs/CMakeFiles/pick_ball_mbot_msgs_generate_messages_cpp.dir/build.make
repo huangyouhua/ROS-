@@ -55,6 +55,7 @@ include pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_genera
 
 pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_cpp: /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/BallPositionStamp.h
 pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_cpp: /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/void_obstacle.h
+pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_cpp: /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/PathPlanning.h
 
 
 /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/BallPositionStamp.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -72,9 +73,17 @@ pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messa
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hyh/mc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from pick_ball_mbot_msgs/void_obstacle.srv"
 	cd /home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs && /home/hyh/mc_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv -Ipick_ball_mbot_msgs:/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p pick_ball_mbot_msgs -o /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
+/home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/PathPlanning.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/PathPlanning.h: /home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv
+/home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/PathPlanning.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/PathPlanning.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hyh/mc_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from pick_ball_mbot_msgs/PathPlanning.srv"
+	cd /home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs && /home/hyh/mc_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv -Ipick_ball_mbot_msgs:/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p pick_ball_mbot_msgs -o /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+
 pick_ball_mbot_msgs_generate_messages_cpp: pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_cpp
 pick_ball_mbot_msgs_generate_messages_cpp: /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/BallPositionStamp.h
 pick_ball_mbot_msgs_generate_messages_cpp: /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/void_obstacle.h
+pick_ball_mbot_msgs_generate_messages_cpp: /home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/PathPlanning.h
 pick_ball_mbot_msgs_generate_messages_cpp: pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/pick_ball_mbot_msgs_generate_messages_cpp.dir/build.make
 
 .PHONY : pick_ball_mbot_msgs_generate_messages_cpp

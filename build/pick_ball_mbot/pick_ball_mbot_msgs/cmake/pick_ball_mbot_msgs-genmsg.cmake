@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "pick_ball_mbot_msgs: 1 messages, 1 services")
+message(STATUS "pick_ball_mbot_msgs: 1 messages, 2 services")
 
 set(MSG_I_FLAGS "-Ipick_ball_mbot_msgs:/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg")
 
@@ -20,6 +20,11 @@ add_custom_target(pick_ball_mbot_msgs_generate_messages ALL)
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv" NAME_WE)
 add_custom_target(_pick_ball_mbot_msgs_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pick_ball_mbot_msgs" "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv" ""
+)
+
+get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv" NAME_WE)
+add_custom_target(_pick_ball_mbot_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pick_ball_mbot_msgs" "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv" ""
 )
 
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg/BallPositionStamp.msg" NAME_WE)
@@ -47,6 +52,12 @@ _generate_srv_cpp(pick_ball_mbot_msgs
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pick_ball_mbot_msgs
 )
+_generate_srv_cpp(pick_ball_mbot_msgs
+  "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pick_ball_mbot_msgs
+)
 
 ### Generating Module File
 _generate_module_cpp(pick_ball_mbot_msgs
@@ -61,6 +72,8 @@ add_dependencies(pick_ball_mbot_msgs_generate_messages pick_ball_mbot_msgs_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv" NAME_WE)
+add_dependencies(pick_ball_mbot_msgs_generate_messages_cpp _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_cpp _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg/BallPositionStamp.msg" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_cpp _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
@@ -88,6 +101,12 @@ _generate_srv_eus(pick_ball_mbot_msgs
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pick_ball_mbot_msgs
 )
+_generate_srv_eus(pick_ball_mbot_msgs
+  "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pick_ball_mbot_msgs
+)
 
 ### Generating Module File
 _generate_module_eus(pick_ball_mbot_msgs
@@ -102,6 +121,8 @@ add_dependencies(pick_ball_mbot_msgs_generate_messages pick_ball_mbot_msgs_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv" NAME_WE)
+add_dependencies(pick_ball_mbot_msgs_generate_messages_eus _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_eus _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg/BallPositionStamp.msg" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_eus _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
@@ -129,6 +150,12 @@ _generate_srv_lisp(pick_ball_mbot_msgs
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pick_ball_mbot_msgs
 )
+_generate_srv_lisp(pick_ball_mbot_msgs
+  "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pick_ball_mbot_msgs
+)
 
 ### Generating Module File
 _generate_module_lisp(pick_ball_mbot_msgs
@@ -143,6 +170,8 @@ add_dependencies(pick_ball_mbot_msgs_generate_messages pick_ball_mbot_msgs_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv" NAME_WE)
+add_dependencies(pick_ball_mbot_msgs_generate_messages_lisp _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_lisp _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg/BallPositionStamp.msg" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_lisp _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
@@ -170,6 +199,12 @@ _generate_srv_nodejs(pick_ball_mbot_msgs
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pick_ball_mbot_msgs
 )
+_generate_srv_nodejs(pick_ball_mbot_msgs
+  "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pick_ball_mbot_msgs
+)
 
 ### Generating Module File
 _generate_module_nodejs(pick_ball_mbot_msgs
@@ -184,6 +219,8 @@ add_dependencies(pick_ball_mbot_msgs_generate_messages pick_ball_mbot_msgs_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv" NAME_WE)
+add_dependencies(pick_ball_mbot_msgs_generate_messages_nodejs _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_nodejs _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg/BallPositionStamp.msg" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_nodejs _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
@@ -211,6 +248,12 @@ _generate_srv_py(pick_ball_mbot_msgs
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pick_ball_mbot_msgs
 )
+_generate_srv_py(pick_ball_mbot_msgs
+  "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pick_ball_mbot_msgs
+)
 
 ### Generating Module File
 _generate_module_py(pick_ball_mbot_msgs
@@ -225,6 +268,8 @@ add_dependencies(pick_ball_mbot_msgs_generate_messages pick_ball_mbot_msgs_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv" NAME_WE)
+add_dependencies(pick_ball_mbot_msgs_generate_messages_py _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_py _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg/BallPositionStamp.msg" NAME_WE)
 add_dependencies(pick_ball_mbot_msgs_generate_messages_py _pick_ball_mbot_msgs_generate_messages_check_deps_${_filename})

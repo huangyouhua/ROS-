@@ -7,18 +7,24 @@
 #include <geometry_msgs/PointStamped.h>
 #include <geometry_msgs/Twist.h>
 #include <pick_ball_mbot_msgs/void_obstacle.h>
+#include <pick_ball_mbot_msgs/PathPlanning.h>
+#include <actionlib_msgs/GoalID.h>
 #include <list>
 
-#define LeftBoundary    200
-#define RightBoundary   400
-#define FilterFactor    0.2
-#define Duaration       40
+#define LeftBoundary                200
+#define RightBoundary               400
+#define FilterFactor                0.2
+#define NoBallDuarationTime         40
+#define NoBallTurnDuarationTime     100
 
 using namespace std;
 
 geometry_msgs::Twist vel_msg;
-uint duaration = 0; 
+uint NoBallDuaration = 0; 
+uint NoBallTurnDuaration = 0; 
 bool obstacle = false;
+bool NoBall = false;
+bool PathRequest = false;
 
 geometry_msgs::Point PostionFilter(geometry_msgs::Point BallPosition)
 {   
@@ -127,7 +133,7 @@ geometry_msgs::Point FindNearestPosition(const pick_ball_mbot_msgs::BallPosition
         if(it->z > MaxCircleRadius)
         {
             MaxCircleRadius = it->z;
-            MaxCircleIndex = distance(BallPosition.begin(),first);
+            MaxCircleIndex = distance(first,it);
         }
     }
 
@@ -138,41 +144,66 @@ geometry_msgs::Point FindNearestPosition(const pick_ball_mbot_msgs::BallPosition
     return GoalPosition;
 }
 
+
 /* 
 According to the position of balls or 
 if there is obstacle to publish velocity 
 */
 void PosCallback(const pick_ball_mbot_msgs::BallPositionStamp::ConstPtr &BallPositionStampMsg)
 {
-    static geometry_msgs::Point GoalPosition; 
+    static geometry_msgs::Point GoalPosition; //static variable, save last position and use it as goal position 
 
+    //accoeding to if there is ball
     if(BallPositionStampMsg->Position.empty())
     {
-        duaration++;
-        duaration = duaration >= Duaration ? Duaration : duaration;
+        NoBallDuaration++;
+        if(NoBallDuaration >= NoBallDuarationTime)
+        {
+            NoBallDuaration = NoBallDuarationTime;
+            NoBall = true;
+        }
     }
-    else
+    else // there is ball
     {
-        duaration = 0;
-        
+        NoBallDuaration = 0;
+        NoBallTurnDuaration = 0;
+        NoBall = false;
+        PathRequest = false;
         //GoalPosition = SetPositonGoal(BallPositionStampMsg);
         GoalPosition = FindNearestPosition(BallPositionStampMsg);
 
         GoalPosition = PostionFilter(GoalPosition);
     }
     
-    if(duaration==Duaration || obstacle)
-    {
-        vel_msg.linear.x = 0.0;
-        vel_msg.angular.z = 0.8;
-        return;
-    }
-    else
-    {
-        vel_msg.angular.z = 0.005 * (GoalPosition.x - 320);
-        vel_msg.linear.x = 0.4;
-    }
 
+    if(!NoBall) //there is ball
+    {
+        if(obstacle) //there is obstacle
+        {
+            vel_msg.linear.x = 0.0;
+            vel_msg.angular.z = 0.8;
+        }
+        else //no obstacle
+        {
+            vel_msg.angular.z = -0.005 * (GoalPosition.x - 320);
+            vel_msg.linear.x = 0.4;
+        }
+    }
+    else // No ball
+    {
+        NoBallTurnDuaration++;
+        if(NoBallTurnDuaration >= NoBallTurnDuarationTime)
+        {
+            NoBallTurnDuaration = NoBallTurnDuarationTime;
+            PathRequest = true;
+        }
+
+        if(!PathRequest) // NoBall is true and PahthRequest is false
+        {
+            vel_msg.linear.x = 0.0;
+            vel_msg.angular.z = 0.8;
+        }
+    }
 }
 
 // obstacle 请求处理函数
@@ -195,16 +226,42 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "motion_planning");
     ros::NodeHandle nh;
 
-    ros::Publisher VelMsg_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
     ros::Subscriber BallPos_sub = nh.subscribe("/Ball/Position", 10, &PosCallback);
+
+    ros::Publisher VelMsg_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
+
+    ros::Publisher PathPlanningCancle_Pub =  nh.advertise<actionlib_msgs::GoalID>("move_base/cancel", 1);
+
 	ros::ServiceServer void_obstacle_service = nh.advertiseService("void_obstacle", handle_function);
+    
+    ros::ServiceClient PathPlanningRequestClient = nh.serviceClient<pick_ball_mbot_msgs::PathPlanning>("PathPlanning");
+
+
+    pick_ball_mbot_msgs::PathPlanning srv;
+    actionlib_msgs::GoalID first_goal;
 
     ros::Rate loop_rate(100); 
 
     while (nh.ok())
     {
-        VelMsg_pub.publish(vel_msg);
-
+        if(PathRequest)// 
+        {
+            srv.request.Request = true;
+            if (PathPlanningRequestClient.call(srv))//接受应答
+            {
+                ROS_INFO("Response from server: %d", srv.response.Result);
+            }
+            else
+            {
+                ROS_ERROR("Failed to call service Service_demo");
+            }
+        }
+        else
+        {
+            PathPlanningCancle_Pub.publish(first_goal); //Cancel path plannig 
+            VelMsg_pub.publish(vel_msg);
+        }
+            
         ros::spinOnce();
         loop_rate.sleep();
     }

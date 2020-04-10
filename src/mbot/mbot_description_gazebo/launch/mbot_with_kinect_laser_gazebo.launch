@@ -1,6 +1,6 @@
 <launch>
 
-    <arg name="world_name" value="$(find table_tennis_scene)/worlds/table_tennis_room_5.world"/>
+    <arg name="world_name" value="$(find table_tennis_scene)/worlds/table_tennis_room_6.world"/>
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
     <arg name="gui" default="true"/>

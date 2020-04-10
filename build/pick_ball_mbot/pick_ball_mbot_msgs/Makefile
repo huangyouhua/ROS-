@@ -271,6 +271,21 @@ _pick_ball_mbot_msgs_generate_messages_check_deps_BallPositionStamp/fast:
 .PHONY : _pick_ball_mbot_msgs_generate_messages_check_deps_BallPositionStamp/fast
 
 # Convenience name for target.
+pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/_pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning.dir/rule:
+	cd /home/hyh/mc_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/_pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning.dir/rule
+.PHONY : pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/_pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning.dir/rule
+
+# Convenience name for target.
+_pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning: pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/_pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning.dir/rule
+
+.PHONY : _pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning
+
+# fast build rule for target.
+_pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning/fast:
+	cd /home/hyh/mc_ws/build && $(MAKE) -f pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/_pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning.dir/build.make pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/_pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning.dir/build
+.PHONY : _pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning/fast
+
+# Convenience name for target.
 pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/roscpp_generate_messages_py.dir/rule:
 	cd /home/hyh/mc_ws/build && $(MAKE) -f CMakeFiles/Makefile2 pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : pick_ball_mbot/pick_ball_mbot_msgs/CMakeFiles/roscpp_generate_messages_py.dir/rule
@@ -694,6 +709,7 @@ help:
 	@echo "... pick_ball_mbot_msgs_generate_messages_eus"
 	@echo "... pick_ball_mbot_msgs_generate_messages_cpp"
 	@echo "... _pick_ball_mbot_msgs_generate_messages_check_deps_BallPositionStamp"
+	@echo "... _pick_ball_mbot_msgs_generate_messages_check_deps_PathPlanning"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_eus"

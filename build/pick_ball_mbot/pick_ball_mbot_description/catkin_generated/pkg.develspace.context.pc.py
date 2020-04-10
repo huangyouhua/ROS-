@@ -3,6 +3,6 @@ CATKIN_PACKAGE_PREFIX = ""
 PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
-PROJECT_NAME = "pick_ball_mbot_desciption"
+PROJECT_NAME = "pick_ball_mbot_description"
 PROJECT_SPACE_DIR = "/home/hyh/mc_ws/devel"
 PROJECT_VERSION = "1.0.0"

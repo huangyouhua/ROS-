@@ -51,6 +51,7 @@ add_message_files(FILES
 add_service_files(
   FILES
   void_obstacle.srv
+  PathPlanning.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -97,7 +98,7 @@ generate_messages(DEPENDENCIES
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   CATKIN_DEPENDS
-  roscpp rospy std_msgs message_runtime
+  roscpp rospy std_msgs message_runtime geometry_msgs
 #  INCLUDE_DIRS include
 #  LIBRARIES pick_ball_mbot_msgs
 #  CATKIN_DEPENDS other_catkin_pkg

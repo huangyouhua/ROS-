@@ -7,7 +7,9 @@ find_package(catkin REQUIRED
   sensor_msgs
   std_msgs
   geometry_msgs
-  ball_msgs
+  pick_ball_mbot_msgs
+  actionlib_msgs
+  actionlib
 )
 
 catkin_package()

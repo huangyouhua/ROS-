@@ -37,7 +37,10 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pick_ball_mbot_msgs/srv" TYPE FILE FILES "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pick_ball_mbot_msgs/srv" TYPE FILE FILES
+    "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv"
+    "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

@@ -459,6 +459,12 @@ object_recognition_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot/object
 object_recognition_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/pick_ball_mbot/object_recognition
 
 //Value Computed by CMake
+obstacle_detection_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot/obstacle_detection
+
+//Value Computed by CMake
+obstacle_detection_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/pick_ball_mbot/obstacle_detection
+
+//Value Computed by CMake
 pick_ball_mbot_control_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_control
 
 //Value Computed by CMake
@@ -471,10 +477,28 @@ pick_ball_mbot_desciption_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot
 pick_ball_mbot_desciption_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_description
 
 //Value Computed by CMake
+pick_ball_mbot_description_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_description
+
+//Value Computed by CMake
+pick_ball_mbot_description_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_description
+
+//Value Computed by CMake
 pick_ball_mbot_msgs_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_msgs
+
+//The directory containing a CMake configuration file for pick_ball_mbot_msgs.
+pick_ball_mbot_msgs_DIR:PATH=/home/hyh/mc_ws/devel/share/pick_ball_mbot_msgs/cmake
 
 //Value Computed by CMake
 pick_ball_mbot_msgs_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs
+
+//Value Computed by CMake
+pick_ball_mbot_navigation_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_navigation
+
+//Value Computed by CMake
+pick_ball_mbot_navigation_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_navigation
+
+//The directory containing a CMake configuration file for pick_ballmbot_msgs.
+pick_ballmbot_msgs_DIR:PATH=pick_ballmbot_msgs_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake

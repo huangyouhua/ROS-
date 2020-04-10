@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/msg/BallPositionStamp.msg"
-services_str = "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv"
+services_str = "/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/void_obstacle.srv;/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs/srv/PathPlanning.srv"
 pkg_name = "pick_ball_mbot_msgs"
 dependencies_str = "std_msgs;geometry_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

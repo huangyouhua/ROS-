@@ -6,6 +6,7 @@
 
     <node name='path_planning' pkg='mbot_navigation_gazebo' type='path_planning' output='screen' >
         <remap from="/base_link/pose_topic" to="$(arg base_lin_pose_topic)"/>
+        <param name="robot_name" value="mbot"/>
     </node>
 
 </launch>
