@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/hyh/mc_ws/devel/include/ball_msgs/BallPositionStamp.h
+/home/hyh/mc_ws/devel/include/pick_ball_mbot_msgs/BallPositionStamp.h
 string
 -
 vector
@@ -87,7 +87,7 @@ geometry_msgs/PointStamped.h
 -
 geometry_msgs/Point.h
 -
-ball_msgs/BallPositionStamp.h
+pick_ball_mbot_msgs/BallPositionStamp.h
 -
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h

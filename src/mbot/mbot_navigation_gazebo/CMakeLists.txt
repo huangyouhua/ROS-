@@ -7,7 +7,7 @@ project(mbot_navigation_gazebo)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS geometry_msgs move_base_msgs roscpp rospy)
+find_package(catkin REQUIRED COMPONENTS geometry_msgs move_base_msgs roscpp rospy actionlib actionlib_msgs std_msgs)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -101,7 +101,7 @@ find_package(catkin REQUIRED COMPONENTS geometry_msgs move_base_msgs roscpp rosp
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES mbot_navigation
-#  CATKIN_DEPENDS other_catkin_pkg
+ CATKIN_DEPENDS actionlib std_msgs
 #  DEPENDS system_lib
 )
 
@@ -112,8 +112,8 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
-# ${catkin_INCLUDE_DIRS}
+include
+${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -200,3 +200,11 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(send_goal src/send_goal.cpp)
+target_link_libraries(send_goal ${catkin_LIBRARIES})
+add_dependencies(send_goal ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(path_planning src/path_planning.cpp)
+target_link_libraries(path_planning ${catkin_LIBRARIES})
+add_dependencies(path_planning ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

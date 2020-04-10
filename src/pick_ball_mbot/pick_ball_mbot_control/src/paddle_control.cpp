@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 
     ros::Rate loop_rate(100); //定义发布频率
 
-    paddle_velocity.data = 3.0;
+    paddle_velocity.data = 5.0;
 
     while (nh.ok())
     {

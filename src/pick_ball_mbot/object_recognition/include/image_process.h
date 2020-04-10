@@ -23,11 +23,18 @@ using namespace std;
 #define beg  0
 #define end  14
 
-#define iLowH        1
-#define iHighH       30
-#define iLowS        90
+// #define iLowH        1
+// #define iHighH       30
+// #define iLowS        90
+// #define iHighS       255 
+// #define iLowV        189
+// #define iHighV       255 
+
+#define iLowH        9
+#define iHighH       31
+#define iLowS        20
 #define iHighS       255 
-#define iLowV        189
+#define iLowV        20
 #define iHighV       255 
 
 #define g_nThresh    100   //137

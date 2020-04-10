@@ -283,82 +283,56 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named ball_msgs_generate_messages_py
+# Target rules for targets named actionlib_msgs_generate_messages_eus
 
 # Build rule for target.
-ball_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_msgs_generate_messages_py
-.PHONY : ball_msgs_generate_messages_py
+actionlib_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_eus
+.PHONY : actionlib_msgs_generate_messages_eus
 
 # fast build rule for target.
-ball_msgs_generate_messages_py/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_py.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_py.dir/build
-.PHONY : ball_msgs_generate_messages_py/fast
+actionlib_msgs_generate_messages_eus/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named ball_msgs_generate_messages_nodejs
+# Target rules for targets named actionlib_generate_messages_py
 
 # Build rule for target.
-ball_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_msgs_generate_messages_nodejs
-.PHONY : ball_msgs_generate_messages_nodejs
+actionlib_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_py
+.PHONY : actionlib_generate_messages_py
 
 # fast build rule for target.
-ball_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_nodejs.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_nodejs.dir/build
-.PHONY : ball_msgs_generate_messages_nodejs/fast
+actionlib_generate_messages_py/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named ball_msgs_generate_messages_lisp
+# Target rules for targets named actionlib_generate_messages_nodejs
 
 # Build rule for target.
-ball_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_msgs_generate_messages_lisp
-.PHONY : ball_msgs_generate_messages_lisp
+actionlib_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_nodejs
+.PHONY : actionlib_generate_messages_nodejs
 
 # fast build rule for target.
-ball_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_lisp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_lisp.dir/build
-.PHONY : ball_msgs_generate_messages_lisp/fast
+actionlib_generate_messages_nodejs/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named motion_planning
+# Target rules for targets named actionlib_generate_messages_lisp
 
 # Build rule for target.
-motion_planning: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 motion_planning
-.PHONY : motion_planning
+actionlib_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_lisp
+.PHONY : actionlib_generate_messages_lisp
 
 # fast build rule for target.
-motion_planning/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/motion_planning.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/motion_planning.dir/build
-.PHONY : motion_planning/fast
-
-#=============================================================================
-# Target rules for targets named ball_msgs_generate_messages_eus
-
-# Build rule for target.
-ball_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_msgs_generate_messages_eus
-.PHONY : ball_msgs_generate_messages_eus
-
-# fast build rule for target.
-ball_msgs_generate_messages_eus/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_eus.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_eus.dir/build
-.PHONY : ball_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named ball_msgs_generate_messages_cpp
-
-# Build rule for target.
-ball_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_msgs_generate_messages_cpp
-.PHONY : ball_msgs_generate_messages_cpp
-
-# fast build rule for target.
-ball_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_cpp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/ball_msgs_generate_messages_cpp.dir/build
-.PHONY : ball_msgs_generate_messages_cpp/fast
+actionlib_generate_messages_lisp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_py
@@ -370,151 +344,8 @@ geometry_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_py/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_nodejs
-
-# Build rule for target.
-geometry_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named std_msgs_generate_messages_py
-
-# Build rule for target.
-std_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_py
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_py.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_py
-
-# Build rule for target.
-sensor_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_py
-
-# Build rule for target.
-roscpp_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_py.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_eus
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_eus
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_nodejs
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_nodejs
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_eus
-
-# Build rule for target.
-geometry_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_cpp
-
-# Build rule for target.
-roscpp_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_cpp
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named std_msgs_generate_messages_cpp
-
-# Build rule for target.
-std_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_nodejs
-
-# Build rule for target.
-sensor_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
@@ -526,8 +357,242 @@ geometry_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_py
+
+# Build rule for target.
+actionlib_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_py
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_nodejs
+
+# Build rule for target.
+move_base_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_nodejs
+.PHONY : move_base_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+move_base_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/build
+.PHONY : move_base_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_cpp
+
+# Build rule for target.
+roscpp_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_eus
+
+# Build rule for target.
+geometry_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named path_planning
+
+# Build rule for target.
+path_planning: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 path_planning
+.PHONY : path_planning
+
+# fast build rule for target.
+path_planning/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/path_planning.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/path_planning.dir/build
+.PHONY : path_planning/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_py
+
+# Build rule for target.
+std_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_py
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_py.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_lisp
+
+# Build rule for target.
+std_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_lisp
+
+# Build rule for target.
+geometry_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_nodejs
+
+# Build rule for target.
+std_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_nodejs
+.PHONY : std_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+std_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_eus
+
+# Build rule for target.
+std_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_eus
+.PHONY : std_msgs_generate_messages_eus
+
+# fast build rule for target.
+std_msgs_generate_messages_eus/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_lisp
+
+# Build rule for target.
+roscpp_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
+.PHONY : roscpp_generate_messages_lisp
+
+# fast build rule for target.
+roscpp_generate_messages_lisp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_nodejs
+
+# Build rule for target.
+geometry_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_lisp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_cpp
+
+# Build rule for target.
+move_base_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_cpp
+.PHONY : move_base_msgs_generate_messages_cpp
+
+# fast build rule for target.
+move_base_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build
+.PHONY : move_base_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_nodejs
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_cpp
+
+# Build rule for target.
+actionlib_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_cpp
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_eus
+
+# Build rule for target.
+move_base_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_eus
+.PHONY : move_base_msgs_generate_messages_eus
+
+# fast build rule for target.
+move_base_msgs_generate_messages_eus/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_eus.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_eus.dir/build
+.PHONY : move_base_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named send_goal
+
+# Build rule for target.
+send_goal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 send_goal
+.PHONY : send_goal
+
+# fast build rule for target.
+send_goal/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/send_goal.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/send_goal.dir/build
+.PHONY : send_goal/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_eus
@@ -539,7 +604,7 @@ roscpp_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_eus.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_eus.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
@@ -552,7 +617,7 @@ rosgraph_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -565,7 +630,7 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -578,125 +643,125 @@ roscpp_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named std_msgs_generate_messages_nodejs
+# Target rules for targets named actionlib_msgs_generate_messages_cpp
 
 # Build rule for target.
-std_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_nodejs
-.PHONY : std_msgs_generate_messages_nodejs
+actionlib_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_cpp
+.PHONY : actionlib_msgs_generate_messages_cpp
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+actionlib_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_lisp
+# Target rules for targets named rosgraph_msgs_generate_messages_nodejs
 
 # Build rule for target.
-roscpp_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
-.PHONY : roscpp_generate_messages_lisp
+rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_nodejs
+.PHONY : rosgraph_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
+rosgraph_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named std_msgs_generate_messages_eus
+# Target rules for targets named move_base_msgs_generate_messages_py
 
 # Build rule for target.
-std_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_eus
-.PHONY : std_msgs_generate_messages_eus
+move_base_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_py
+.PHONY : move_base_msgs_generate_messages_py
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
+move_base_msgs_generate_messages_py/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_py.dir/build
+.PHONY : move_base_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_lisp
+# Target rules for targets named actionlib_generate_messages_eus
 
 # Build rule for target.
-geometry_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
-.PHONY : geometry_msgs_generate_messages_lisp
+actionlib_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_eus
+.PHONY : actionlib_generate_messages_eus
 
 # fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
+actionlib_generate_messages_eus/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_eus.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named std_msgs_generate_messages_lisp
+# Target rules for targets named move_base_msgs_generate_messages_lisp
 
 # Build rule for target.
-std_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
-.PHONY : std_msgs_generate_messages_lisp
+move_base_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_lisp
+.PHONY : move_base_msgs_generate_messages_lisp
 
 # fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
+move_base_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build
+.PHONY : move_base_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_cpp
+# Target rules for targets named roscpp_generate_messages_py
 
 # Build rule for target.
-sensor_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
-.PHONY : sensor_msgs_generate_messages_cpp
+roscpp_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
+.PHONY : roscpp_generate_messages_py
 
 # fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
+roscpp_generate_messages_py/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_py.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named paddle_control
+# Target rules for targets named rosgraph_msgs_generate_messages_eus
 
 # Build rule for target.
-paddle_control: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 paddle_control
-.PHONY : paddle_control
+rosgraph_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_eus
+.PHONY : rosgraph_msgs_generate_messages_eus
 
 # fast build rule for target.
-paddle_control/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/paddle_control.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/paddle_control.dir/build
-.PHONY : paddle_control/fast
+rosgraph_msgs_generate_messages_eus/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_eus
+# Target rules for targets named std_msgs_generate_messages_cpp
 
 # Build rule for target.
-sensor_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
-.PHONY : sensor_msgs_generate_messages_eus
+std_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
+.PHONY : std_msgs_generate_messages_cpp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
+std_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_lisp
+# Target rules for targets named rosgraph_msgs_generate_messages_cpp
 
 # Build rule for target.
-sensor_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
-.PHONY : sensor_msgs_generate_messages_lisp
+rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
+.PHONY : rosgraph_msgs_generate_messages_cpp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make pick_ball_mbot/pick_ball_mbot_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
+rosgraph_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make mbot/mbot_navigation_gazebo/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Help Target
 help:
@@ -720,38 +785,43 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... ball_msgs_generate_messages_py"
-	@echo "... ball_msgs_generate_messages_nodejs"
-	@echo "... ball_msgs_generate_messages_lisp"
-	@echo "... motion_planning"
-	@echo "... ball_msgs_generate_messages_eus"
-	@echo "... ball_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... actionlib_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... move_base_msgs_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... path_planning"
+	@echo "... std_msgs_generate_messages_py"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_eus"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... move_base_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... move_base_msgs_generate_messages_eus"
+	@echo "... send_goal"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... paddle_control"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... move_base_msgs_generate_messages_py"
+	@echo "... actionlib_generate_messages_eus"
+	@echo "... move_base_msgs_generate_messages_lisp"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
 .PHONY : help
 
 

@@ -37,7 +37,7 @@ CATKIN_SKIP_TESTING:BOOL=OFF
 CATKIN_SYMLINK_INSTALL:BOOL=OFF
 
 //List of ';' separated packages to build
-CATKIN_WHITELIST_PACKAGES:STRING=pick_ball_mbot_control
+CATKIN_WHITELIST_PACKAGES:STRING=mbot_navigation_gazebo
 
 //No help, variable specified on the command line.
 CATKIN_WHITHELIST_PACKAGES:UNINITIALIZED=object_recognition
@@ -414,7 +414,7 @@ image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
 joint_limits_interface_DIR:PATH=/opt/ros/kinetic/share/joint_limits_interface/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libactionlib.so
 
 //Value Computed by CMake
 mbot_control_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/mbot/mbot_control
@@ -469,6 +469,12 @@ pick_ball_mbot_desciption_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot
 
 //Value Computed by CMake
 pick_ball_mbot_desciption_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_description
+
+//Value Computed by CMake
+pick_ball_mbot_msgs_BINARY_DIR:STATIC=/home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_msgs
+
+//Value Computed by CMake
+pick_ball_mbot_msgs_SOURCE_DIR:STATIC=/home/hyh/mc_ws/src/pick_ball_mbot/pick_ball_mbot_msgs
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake

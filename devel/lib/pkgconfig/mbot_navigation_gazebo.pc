@@ -5,4 +5,4 @@ Description: Description of mbot_navigation_gazebo
 Version: 0.0.0
 Cflags: 
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: actionlib std_msgs

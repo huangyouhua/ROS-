@@ -1,2 +1,2 @@
-mbot/mbot_control:mbot/mbot_description_gazebo:mbot/mbot_navigation_gazebo:pick_ball_mbot/ball_msgs:pick_ball_mbot/object_recognition:pick_ball_mbot/pick_ball_mbot_control:pick_ball_mbot/pick_ball_mbot_description:pick_ball_mbot/pick_ball_mbot_navigation:pick_ball_mbot/table_tennis_scene
--DCATKIN_DEVEL_PREFIX=/home/hyh/mc_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hyh/mc_ws/install -G Unix Makefiles
+mbot/mbot_control:mbot/mbot_description_gazebo:mbot/mbot_navigation_gazebo:pick_ball_mbot/object_recognition:pick_ball_mbot/obstacle_detection:pick_ball_mbot/pick_ball_mbot_control:pick_ball_mbot/pick_ball_mbot_description:pick_ball_mbot/pick_ball_mbot_msgs:pick_ball_mbot/pick_ball_mbot_navigation:pick_ball_mbot/table_tennis_scene
+-DCATKIN_WHITELIST_PACKAGES=mbot_navigation_gazebo -DCATKIN_DEVEL_PREFIX=/home/hyh/mc_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hyh/mc_ws/install -G Unix Makefiles

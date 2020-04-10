@@ -1,0 +1,11 @@
+<launch>
+
+     <arg name="base_lin_pose_topic" default="/gazebo/model_states"/>
+
+    <!--<node name='send_goal' pkg='mbot_navigation_gazebo' type='send_goal' output='screen' />-->
+
+    <node name='path_planning' pkg='mbot_navigation_gazebo' type='path_planning' output='screen' >
+        <remap from="/base_link/pose_topic" to="$(arg base_lin_pose_topic)"/>
+    </node>
+
+</launch>

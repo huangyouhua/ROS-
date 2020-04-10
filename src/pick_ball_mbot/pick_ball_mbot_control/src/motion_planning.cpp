@@ -2,18 +2,23 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <ball_msgs/BallPositionStamp.h>
+#include <pick_ball_mbot_msgs/BallPositionStamp.h>
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/PointStamped.h>
 #include <geometry_msgs/Twist.h>
+#include <pick_ball_mbot_msgs/void_obstacle.h>
+#include <list>
 
 #define LeftBoundary    200
 #define RightBoundary   400
 #define FilterFactor    0.2
+#define Duaration       40
 
 using namespace std;
+
 geometry_msgs::Twist vel_msg;
-geometry_msgs::Point GoalPosition;
+uint duaration = 0; 
+bool obstacle = false;
 
 geometry_msgs::Point PostionFilter(geometry_msgs::Point BallPosition)
 {   
@@ -50,15 +55,17 @@ geometry_msgs::Point CalculatePostion(vector<geometry_msgs::Point> BallPosition)
     return Position;
 }
 
-void SetPositonGoal(const ball_msgs::BallPositionStamp::ConstPtr &BallPositionStampMsg)
+/*
+* Set positions of most balls
+*/
+geometry_msgs::Point SetPositonGoal(const pick_ball_mbot_msgs::BallPositionStamp::ConstPtr &BallPositionStampMsg)
 {
-     if(BallPositionStampMsg->Position.empty())
-        return;
-
     vector<geometry_msgs::Point> BallPosition(BallPositionStampMsg->Position);
     vector<geometry_msgs::Point> LeftBalls;
     vector<geometry_msgs::Point> MidBalls;
     vector<geometry_msgs::Point> RightBalls;
+
+    geometry_msgs::Point GoalPosition;
 
     size_t maxsize = 0;
 
@@ -99,18 +106,88 @@ void SetPositonGoal(const ball_msgs::BallPositionStamp::ConstPtr &BallPositionSt
         else 
             GoalPosition = CalculatePostion(RightBalls);
     }
+    return GoalPosition;
 }
 
-void PosCallback(const ball_msgs::BallPositionStamp::ConstPtr &BallPositionStampMsg)
+/*
+* Find the nearest ball
+*/
+geometry_msgs::Point FindNearestPosition(const pick_ball_mbot_msgs::BallPositionStamp::ConstPtr &BallPositionStampMsg)
 {
-    SetPositonGoal(BallPositionStampMsg);
+    vector<geometry_msgs::Point> BallPosition(BallPositionStampMsg->Position);
 
-    GoalPosition = PostionFilter(GoalPosition);
+    geometry_msgs::Point GoalPosition;
+    uint MaxCircleRadius = 0;
+    size_t MaxCircleIndex = 0;
 
-    /* According to the position of balls to publish velocity */
-    vel_msg.angular.z = 0.05 * (GoalPosition.x - 320);
-    vel_msg.linear.x = 0.3;
+    /*find the nearest ball*/
+    vector<geometry_msgs::Point>::iterator first = BallPosition.begin();
+    for(vector<geometry_msgs::Point>::iterator it = BallPosition.begin(); it < BallPosition.end(); it++)
+    {
+        if(it->z > MaxCircleRadius)
+        {
+            MaxCircleRadius = it->z;
+            MaxCircleIndex = distance(BallPosition.begin(),first);
+        }
+    }
 
+    GoalPosition.x = BallPosition[MaxCircleIndex].x;
+    GoalPosition.y = BallPosition[MaxCircleIndex].y;
+    GoalPosition.z = BallPosition[MaxCircleIndex].z;
+
+    return GoalPosition;
+}
+
+/* 
+According to the position of balls or 
+if there is obstacle to publish velocity 
+*/
+void PosCallback(const pick_ball_mbot_msgs::BallPositionStamp::ConstPtr &BallPositionStampMsg)
+{
+    static geometry_msgs::Point GoalPosition; 
+
+    if(BallPositionStampMsg->Position.empty())
+    {
+        duaration++;
+        duaration = duaration >= Duaration ? Duaration : duaration;
+    }
+    else
+    {
+        duaration = 0;
+        
+        //GoalPosition = SetPositonGoal(BallPositionStampMsg);
+        GoalPosition = FindNearestPosition(BallPositionStampMsg);
+
+        GoalPosition = PostionFilter(GoalPosition);
+    }
+    
+    if(duaration==Duaration || obstacle)
+    {
+        vel_msg.linear.x = 0.0;
+        vel_msg.angular.z = 0.8;
+        return;
+    }
+    else
+    {
+        vel_msg.angular.z = 0.005 * (GoalPosition.x - 320);
+        vel_msg.linear.x = 0.4;
+    }
+
+}
+
+// obstacle 请求处理函数
+bool handle_function(pick_ball_mbot_msgs::void_obstacle::Request &req,
+					 pick_ball_mbot_msgs::void_obstacle::Response &res)
+{
+
+    if(req.obstacle)
+        obstacle = true;
+    else
+        obstacle = false;
+
+	res.result = true;
+
+	return true;
 }
 
 int main(int argc, char **argv)
@@ -120,8 +197,8 @@ int main(int argc, char **argv)
 
     ros::Publisher VelMsg_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
     ros::Subscriber BallPos_sub = nh.subscribe("/Ball/Position", 10, &PosCallback);
+	ros::ServiceServer void_obstacle_service = nh.advertiseService("void_obstacle", handle_function);
 
-    /* define the publish frequency */
     ros::Rate loop_rate(100); 
 
     while (nh.ok())

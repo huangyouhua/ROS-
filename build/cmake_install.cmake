@@ -126,7 +126,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/hyh/mc_ws/build/gtest/cmake_install.cmake")
-  include("/home/hyh/mc_ws/build/pick_ball_mbot/pick_ball_mbot_control/cmake_install.cmake")
+  include("/home/hyh/mc_ws/build/mbot/mbot_navigation_gazebo/cmake_install.cmake")
 
 endif()
 

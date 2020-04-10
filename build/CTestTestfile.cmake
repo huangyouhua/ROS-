@@ -5,4 +5,4 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
-subdirs(pick_ball_mbot/pick_ball_mbot_control)
+subdirs(mbot/mbot_navigation_gazebo)

@@ -15,7 +15,7 @@
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/PointStamped.h>
 #include <geometry_msgs/Point.h>
-#include <ball_msgs/BallPositionStamp.h>
+#include <pick_ball_mbot_msgs/BallPositionStamp.h>
 
 using namespace cv;
 using namespace std;
@@ -24,7 +24,7 @@ Mat ImageThresholded;//二值化后的图像数组
 Mat ImageProcessed;//处理后的图像，画出小球的轮廓
 sensor_msgs::ImagePtr RosImgThresholded;
 sensor_msgs::ImagePtr RosImageProcessed;
-ball_msgs::BallPositionStamp BallPosition;//z is the radius of circle
+pick_ball_mbot_msgs::BallPositionStamp BallPosition;//z is the radius of circle
 
 ros::Time ImageStamped;
 
@@ -43,67 +43,6 @@ vector<Mat> GetOriginalImg(const string img_path)
 	return imgOriginalVector;
 }
 
-void showManyImages(vector<Mat>& src, Size imgSize)
-{
-	int nNumImages = src.size();
-	Size nSizeWindows;
-	if (nNumImages > 14)
-	{
-		cout << "Not more than 14 images!" << endl;
-		return;
-	}
-	//根据图片数量确定分割小窗口的排布
-	switch (nNumImages)
-	{
-	case 1:nSizeWindows = Size(1, 1); break;
-	case 2:nSizeWindows = Size(1, 2); break;
-	case 3:
-	case 4:nSizeWindows = Size(2, 2); break;
-	case 5:
-	case 6:nSizeWindows = Size(3, 2); break;
-	case 7:
-	case 8:nSizeWindows = Size(4, 2); break;
-	case 9:nSizeWindows = Size(3, 3); break;
-	case 10:nSizeWindows = Size(4, 3); break;
-	case 11:nSizeWindows = Size(4, 3); break;
-	case 12:nSizeWindows = Size(4, 3); break;
-	case 13:nSizeWindows = Size(5, 3); break;
-	case 14:nSizeWindows = Size(5, 3); break;
-	default:nSizeWindows = Size(5, 3); break;
-	
-	}
-	//设置图像的大小，图像之间的间隔以及边界
-	int nShowImageSize = 300;
-	int nShowImageH = 225;
-	int nSplitLineSize = 15;
-	int nAroundLineSize = 50;
-	//创建输出图像的大小
-	int imageWidth = nShowImageSize*nSizeWindows.width + (nShowImageSize - 1)*nSplitLineSize + nAroundLineSize;
-	int imageHeight = nShowImageH*nSizeWindows.height + (nShowImageH - 1)*nSplitLineSize + nAroundLineSize;
-	Mat showWindowImages(imageHeight, imageWidth, CV_8UC3, Scalar::all(0));
-	//提取小图像左上角坐标
-	int posX = nAroundLineSize / 2;
-	int posY = nAroundLineSize / 2;
-	cout << "posX: " << posX << " posY: " << posY << endl;
-	int tempPosX = posX;
-	int tempPosY = posY;
-	//将每张小图整合到大图中
-	for (int i = 0; i < nNumImages; i++)
-	{
-		if ((i%nSizeWindows.width == 0) && (tempPosX != posX))
-		{
-			tempPosX = posX;
-			tempPosY += (nSplitLineSize + nShowImageH);
-		}
-		//利用Rect区域将小图像置于大图像相应区域
-		Mat tempImage = showWindowImages(Rect(tempPosX, tempPosY, nShowImageSize, nShowImageH));
-		//利用resize实现图像缩放
-		resize(src[i],tempImage,Size(nShowImageSize,nShowImageH));
-		tempPosX += nSplitLineSize + nShowImageSize;
-	}
-	
-	imshow("showWindowImages",showWindowImages);
-}
 
 Mat myfindContours(Mat image)    
 {  
@@ -203,7 +142,7 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "image_process");
     ros::NodeHandle nh;
 
-    ros::Publisher BallPos_pub = nh.advertise<ball_msgs::BallPositionStamp>("/Ball/Position", 10);
+    ros::Publisher BallPos_pub = nh.advertise<pick_ball_mbot_msgs::BallPositionStamp>("/Ball/Position", 10);
     image_transport::ImageTransport it(nh); 
     image_transport::Publisher ImageProcessed_pub = it.advertise("camera/rgb/image_processed", 1);
 	image_transport::Publisher ImageThresholded_pub = it.advertise("camera/rgb/image_thresholded", 1);
